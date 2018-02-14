@@ -228,8 +228,8 @@ namespace RGFS.FunctionalTests.Tests.EnlistmentPerFixture
         [TestCase, Order(9)]
         public void DeletedFileAddedToSparseCheckoutAndSkipWorktreeBitCleared()
         {
-            string fileToDeleteSparseCheckoutEntry = "/GVFlt_DeleteFileTest/GVFlt_DeleteFullFileWithoutFileContext_DeleteOnClose/a.txt";
-            string fileToDeleteRelativePath = "GVFlt_DeleteFileTest\\GVFlt_DeleteFullFileWithoutFileContext_DeleteOnClose\\a.txt";
+            string fileToDeleteSparseCheckoutEntry = "/RGFlt_DeleteFileTest/RGFlt_DeleteFullFileWithoutFileContext_DeleteOnClose/a.txt";
+            string fileToDeleteRelativePath = "RGFlt_DeleteFileTest\\RGFlt_DeleteFullFileWithoutFileContext_DeleteOnClose\\a.txt";
             this.VerifyWorktreeBit(fileToDeleteSparseCheckoutEntry.TrimStart(new char[] { '/' }), LsFilesStatus.SkipWorktree);
 
             this.fileSystem.DeleteFile(this.Enlistment.GetVirtualPathTo(fileToDeleteRelativePath));
@@ -280,8 +280,8 @@ namespace RGFS.FunctionalTests.Tests.EnlistmentPerFixture
         [TestCase, Order(11)]
         public void FileRenamedOutOfRepoAddedToSparseCheckoutAndSkipWorktreeBitCleared()
         {
-            string fileToRenameSparseCheckoutEntry = "/GVFlt_MoveFileTest/PartialToOutside/from/lessInFrom.txt";
-            string fileToRenameVirtualPath = this.Enlistment.GetVirtualPathTo("GVFlt_MoveFileTest\\PartialToOutside\\from\\lessInFrom.txt");
+            string fileToRenameSparseCheckoutEntry = "/RGFlt_MoveFileTest/PartialToOutside/from/lessInFrom.txt";
+            string fileToRenameVirtualPath = this.Enlistment.GetVirtualPathTo("RGFlt_MoveFileTest\\PartialToOutside\\from\\lessInFrom.txt");
             this.VerifyWorktreeBit(fileToRenameSparseCheckoutEntry.TrimStart(new char[] { '/' }), LsFilesStatus.SkipWorktree);
 
             string fileOutsideRepoPath = Path.Combine(this.Enlistment.EnlistmentRoot, "FileRenamedOutOfRepoAddedToSparseCheckoutAndSkipWorktreeBitCleared.txt");
@@ -322,8 +322,8 @@ namespace RGFS.FunctionalTests.Tests.EnlistmentPerFixture
         [TestCase, Order(13)]
         public void SupersededFileAddedToSparseCheckoutAndSkipWorktreeBitCleared()
         {
-            string fileToSupersedeSparseCheckoutEntry = "/GVFlt_FileOperationTest/WriteAndVerify.txt";
-            string fileToSupersedePath = this.Enlistment.GetVirtualPathTo("GVFlt_FileOperationTest\\WriteAndVerify.txt");
+            string fileToSupersedeSparseCheckoutEntry = "/RGFlt_FileOperationTest/WriteAndVerify.txt";
+            string fileToSupersedePath = this.Enlistment.GetVirtualPathTo("RGFlt_FileOperationTest\\WriteAndVerify.txt");
             this.VerifyWorktreeBit(fileToSupersedeSparseCheckoutEntry.TrimStart(new char[] { '/' }), LsFilesStatus.SkipWorktree);
 
             string newContent = "SupersededFileWillBeAddedToSparseCheckoutAndHaveSkipWorktreeBitCleared test new contents";

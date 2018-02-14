@@ -58,9 +58,9 @@
       <Project>{374bf1e5-0b2d-4d4a-bd5e-4212299def09}</Project>
       <Name>RGFS.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RGFS.GVFlt\RGFS.GVFlt.csproj">
+    <ProjectReference Include="..\RGFS.RGFlt\RGFS.RGFlt.csproj">
       <Project>{1118b427-7063-422f-83b9-5023c8ec5a7a}</Project>
-      <Name>RGFS.GVFlt</Name>
+      <Name>RGFS.RGFlt</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

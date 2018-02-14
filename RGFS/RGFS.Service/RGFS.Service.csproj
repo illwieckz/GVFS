@@ -87,7 +87,7 @@
     <Compile Include="RGFSService.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Handlers\AttachGvFltHandler.cs" />
+    <Compile Include="Handlers\AttachRgFltHandler.cs" />
     <Compile Include="Handlers\ExcludeFromAntiVirusHandler.cs" />
     <Compile Include="Handlers\MessageHandler.cs" />
     <Compile Include="Handlers\NotificationHandler.cs" />

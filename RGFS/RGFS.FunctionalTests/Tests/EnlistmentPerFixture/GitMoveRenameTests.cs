@@ -181,7 +181,7 @@ namespace RGFS.FunctionalTests.Tests.EnlistmentPerFixture
             this.fileSystem.WriteAllText(filePath, this.testFileContents);
             filePath.ShouldBeAFile(this.fileSystem).WithContents(this.testFileContents);
 
-            string renamedFileName = "GVFlt_MoveFileTest\\GitStatusAfterRenameFileIntoRepo.cs";
+            string renamedFileName = "RGFlt_MoveFileTest\\GitStatusAfterRenameFileIntoRepo.cs";
             this.fileSystem.MoveFile(filePath, this.Enlistment.GetVirtualPathTo(renamedFileName));
             this.Enlistment.GetVirtualPathTo(filePath).ShouldNotExistOnDisk(this.fileSystem);
 

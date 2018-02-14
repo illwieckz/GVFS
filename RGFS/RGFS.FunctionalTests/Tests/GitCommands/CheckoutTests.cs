@@ -412,7 +412,7 @@ namespace RGFS.FunctionalTests.Tests.GitCommands
             this.ShouldNotExistOnDisk(@"Test_ConflictTests\AddedFiles\AddedByBothSameContent.txt");
             this.ShouldNotExistOnDisk(@"Test_ConflictTests\AddedFiles\AddedBySource.txt");
 
-            // Check a second time to exercise the GvFlt negative cache
+            // Check a second time to exercise the RgFlt negative cache
             this.ShouldNotExistOnDisk(@"Test_ConflictTests\AddedFiles\AddedByBothDifferentContent.txt");
             this.ShouldNotExistOnDisk(@"Test_ConflictTests\AddedFiles\AddedByBothSameContent.txt");
             this.ShouldNotExistOnDisk(@"Test_ConflictTests\AddedFiles\AddedBySource.txt");
@@ -433,7 +433,7 @@ namespace RGFS.FunctionalTests.Tests.GitCommands
             this.ShouldNotExistOnDisk(@"Test_ConflictTests\AddedFiles\AddedByBothSameContent.txt");
             this.ShouldNotExistOnDisk(@"Test_ConflictTests\AddedFiles\AddedBySource.txt");
 
-            // Check a second time to exercise the GvFlt negative cache
+            // Check a second time to exercise the RgFlt negative cache
             this.ShouldNotExistOnDisk(@"Test_ConflictTests\AddedFiles\AddedByBothDifferentContent.txt");
             this.ShouldNotExistOnDisk(@"Test_ConflictTests\AddedFiles\AddedByBothSameContent.txt");
             this.ShouldNotExistOnDisk(@"Test_ConflictTests\AddedFiles\AddedBySource.txt");

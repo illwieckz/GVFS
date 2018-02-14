@@ -43,13 +43,13 @@
     <ClInclude Include="interface\NtQueryDirectoryFileTests.h">
       <Filter>interface</Filter>
     </ClInclude>
-    <ClInclude Include="interface\GVFlt_DirEnumTest.h">
+    <ClInclude Include="interface\RGFlt_DirEnumTest.h">
       <Filter>interface</Filter>
     </ClInclude>
     <ClInclude Include="include\TestHelpers.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="interface\GVFlt_DeleteFileTest.h">
+    <ClInclude Include="interface\RGFlt_DeleteFileTest.h">
       <Filter>interface</Filter>
     </ClInclude>
     <ClInclude Include="include\TestVerifiers.h">
@@ -58,34 +58,34 @@
     <ClInclude Include="include\gvlib_internal.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="include\gvflt.h">
+    <ClInclude Include="include\rgflt.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="interface\GVFlt_DeleteFolderTest.h">
+    <ClInclude Include="interface\RGFlt_DeleteFolderTest.h">
       <Filter>interface</Filter>
     </ClInclude>
-    <ClInclude Include="interface\GVFlt_FileAttributeTest.h">
+    <ClInclude Include="interface\RGFlt_FileAttributeTest.h">
       <Filter>interface</Filter>
     </ClInclude>
-    <ClInclude Include="interface\GVFlt_FileEATest.h">
+    <ClInclude Include="interface\RGFlt_FileEATest.h">
       <Filter>interface</Filter>
     </ClInclude>
-    <ClInclude Include="interface\GVFlt_BugRegressionTest.h">
+    <ClInclude Include="interface\RGFlt_BugRegressionTest.h">
       <Filter>interface</Filter>
     </ClInclude>
-    <ClInclude Include="interface\GVFlt_FileOperationTest.h">
+    <ClInclude Include="interface\RGFlt_FileOperationTest.h">
       <Filter>interface</Filter>
     </ClInclude>
-    <ClInclude Include="interface\GVFlt_MoveFileTest.h">
+    <ClInclude Include="interface\RGFlt_MoveFileTest.h">
       <Filter>interface</Filter>
     </ClInclude>
-    <ClInclude Include="interface\GVFlt_MoveFolderTest.h">
+    <ClInclude Include="interface\RGFlt_MoveFolderTest.h">
       <Filter>interface</Filter>
     </ClInclude>
-    <ClInclude Include="interface\GVFlt_MultiThreadsTest.h">
+    <ClInclude Include="interface\RGFlt_MultiThreadsTest.h">
       <Filter>interface</Filter>
     </ClInclude>
-    <ClInclude Include="interface\GVFlt_SetLinkTest.h">
+    <ClInclude Include="interface\RGFlt_SetLinkTest.h">
       <Filter>interface</Filter>
     </ClInclude>
     <ClInclude Include="interface\PlaceholderUtils.h">
@@ -114,37 +114,37 @@
     <ClCompile Include="source\NtQueryDirectoryFileTests.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\GVFlt_DirEnumTest.cpp">
+    <ClCompile Include="source\RGFlt_DirEnumTest.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\GVFlt_DeleteFileTest.cpp">
+    <ClCompile Include="source\RGFlt_DeleteFileTest.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\GVFlt_DeleteFolderTest.cpp">
+    <ClCompile Include="source\RGFlt_DeleteFolderTest.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\GVFlt_FileAttributeTest.cpp">
+    <ClCompile Include="source\RGFlt_FileAttributeTest.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\GVFlt_FileEATest.cpp">
+    <ClCompile Include="source\RGFlt_FileEATest.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\GVFlt_BugRegressionTest.cpp">
+    <ClCompile Include="source\RGFlt_BugRegressionTest.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\GVFlt_FileOperationTest.cpp">
+    <ClCompile Include="source\RGFlt_FileOperationTest.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\GVFlt_MoveFileTest.cpp">
+    <ClCompile Include="source\RGFlt_MoveFileTest.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\GVFlt_MoveFolderTest.cpp">
+    <ClCompile Include="source\RGFlt_MoveFolderTest.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\GVFlt_MultiThreadTest.cpp">
+    <ClCompile Include="source\RGFlt_MultiThreadTest.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\GVFlt_SetLinkTest.cpp">
+    <ClCompile Include="source\RGFlt_SetLinkTest.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="source\PlaceholderUtils.cpp">

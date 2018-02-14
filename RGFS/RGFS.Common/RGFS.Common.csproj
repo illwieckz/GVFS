@@ -71,7 +71,7 @@
     <Compile Include="FileBasedCollectionException.cs" />
     <Compile Include="Http\CacheServerResolver.cs" />
     <Compile Include="PlaceholderListDatabase.cs" />
-    <Compile Include="FileSystem\GvFltFilter.cs" />
+    <Compile Include="FileSystem\RgFltFilter.cs" />
     <Compile Include="RGFSEnlistment.Shared.cs" />
     <Compile Include="NetworkStreams\BatchedLooseObjectDeserializer.cs" />
     <Compile Include="NetworkStreams\RestrictedStream.cs" />

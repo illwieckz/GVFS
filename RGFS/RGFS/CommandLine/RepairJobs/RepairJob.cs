@@ -1,7 +1,7 @@
 ﻿using RGFS.Common;
 using RGFS.Common.FileSystem;
 using RGFS.Common.Tracing;
-using RGFS.GVFlt.DotGit;
+using RGFS.RGFlt.DotGit;
 using Microsoft.Diagnostics.Tracing;
 using System;
 using System.Collections.Generic;
@@ -117,7 +117,7 @@ namespace RGFS.CommandLine.RepairJobs
                 gitObjects: null,
                 blobSizes: null,
                 repoMetadata: null,
-                gvflt: null,
+                rgflt: null,
                 placeholderList: null,
                 sparseCheckout: null))
             {

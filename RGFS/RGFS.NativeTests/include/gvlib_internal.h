@@ -1,13 +1,13 @@
 // gvlib_internal.h
 //
-// Function declarations for internal functions in gvlib (used in the GVFlt tests)
-// that are not intended to be used by user applications (e.g. RGFS) built on GVFlt
+// Function declarations for internal functions in gvlib (used in the RGFlt tests)
+// that are not intended to be used by user applications (e.g. RGFS) built on RGFlt
 //
-// Subset of the contents of: sdktools\CoreBuild\GvFlt\lib\gvlib_internal.h
+// Subset of the contents of: sdktools\CoreBuild\RgFlt\lib\gvlib_internal.h
 
 #pragma once
 
-#include "gvflt.h"
+#include "rgflt.h"
 
 #ifdef __cplusplus
 extern "C" {

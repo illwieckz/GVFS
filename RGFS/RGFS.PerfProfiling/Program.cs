@@ -1,5 +1,5 @@
 ﻿using RGFS.Common;
-using RGFS.GVFlt.DotGit;
+using RGFS.RGFlt.DotGit;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -18,13 +18,13 @@ namespace RGFS.PerfProfiling
                 () => GitIndexProjection.ReadIndex(Path.Combine(environment.Enlistment.WorkingDirectoryRoot, RGFSConstants.DotGit.Index)));
             TimeIt(
                 "Index Parse (new projection)", 
-                () => environment.GVFltCallbacks.GitIndexProjectionProfiler.ForceRebuildProjection());
+                () => environment.RGFltCallbacks.GitIndexProjectionProfiler.ForceRebuildProjection());
             TimeIt(
                 "Index Parse (update offsets and validate)", 
-                () => environment.GVFltCallbacks.GitIndexProjectionProfiler.ForceUpdateOffsetsAndValidateSparseCheckout());
+                () => environment.RGFltCallbacks.GitIndexProjectionProfiler.ForceUpdateOffsetsAndValidateSparseCheckout());
             TimeIt(
                 "Index Parse (validate sparse checkout)", 
-                () => environment.GVFltCallbacks.GitIndexProjectionProfiler.ForceValidateSparseCheckout());
+                () => environment.RGFltCallbacks.GitIndexProjectionProfiler.ForceValidateSparseCheckout());
             Console.WriteLine("Press Enter to exit");
         }
 

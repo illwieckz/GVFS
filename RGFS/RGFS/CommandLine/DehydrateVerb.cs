@@ -6,8 +6,8 @@ using RGFS.Common.Git;
 using RGFS.Common.Http;
 using RGFS.Common.NamedPipes;
 using RGFS.Common.Tracing;
-using RGFS.GVFlt;
-using RGFS.GVFlt.DotGit;
+using RGFS.RGFlt;
+using RGFS.RGFlt.DotGit;
 using Microsoft.Diagnostics.Tracing;
 using System;
 using System.IO;
@@ -212,7 +212,7 @@ To actually execute the dehydrate, run 'rgfs dehydrate --confirm'
         private void PrepareSrcFolder(ITracer tracer, RGFSEnlistment enlistment)
         {
             string error;
-            if (!GVFltCallbacks.TryPrepareFolderForGVFltCallbacks(enlistment.WorkingDirectoryRoot, out error))
+            if (!RGFltCallbacks.TryPrepareFolderForRGFltCallbacks(enlistment.WorkingDirectoryRoot, out error))
             {
                 this.WriteErrorAndExit(tracer, "Failed to recreate the virtualization root: " + error);
             }

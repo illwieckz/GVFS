@@ -179,15 +179,15 @@ namespace RGFS.Common.NamedPipes
             }
         }
 
-        public class AttachGvFltRequest
+        public class AttachRgFltRequest
         {
-            public const string Header = nameof(AttachGvFltRequest);
+            public const string Header = nameof(AttachRgFltRequest);
 
             public string EnlistmentRoot { get; set; }
 
-            public static AttachGvFltRequest FromMessage(Message message)
+            public static AttachRgFltRequest FromMessage(Message message)
             {
-                return JsonConvert.DeserializeObject<AttachGvFltRequest>(message.Body);
+                return JsonConvert.DeserializeObject<AttachRgFltRequest>(message.Body);
             }
 
             public Message ToMessage()
@@ -195,7 +195,7 @@ namespace RGFS.Common.NamedPipes
                 return new Message(Header, JsonConvert.SerializeObject(this));
             }
 
-            public class Response : BaseResponse<AttachGvFltRequest>
+            public class Response : BaseResponse<AttachRgFltRequest>
             {
                 public static Response FromMessage(Message message)
                 {

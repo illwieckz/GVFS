@@ -2,7 +2,7 @@
 using RGFS.Common;
 using RGFS.Common.FileSystem;
 using RGFS.Common.Tracing;
-using RGFS.GVFlt.DotGit;
+using RGFS.RGFlt.DotGit;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

@@ -3,7 +3,7 @@ using RGFS.Common.FileSystem;
 using RGFS.Common.Git;
 using RGFS.Common.Http;
 using RGFS.Common.Tracing;
-using RGFS.GVFlt;
+using RGFS.RGFlt;
 
 namespace RGFS.PerfProfiling
 {
@@ -13,12 +13,12 @@ namespace RGFS.PerfProfiling
         {
             this.Enlistment = this.CreateEnlistment(enlistmentRootPath);
             this.Context = this.CreateContext();
-            this.GVFltCallbacks = this.CreateGVFltCallbacks();
+            this.RGFltCallbacks = this.CreateRGFltCallbacks();
         }
 
         public RGFSEnlistment Enlistment { get; private set; }
         public RGFSContext Context { get; private set; }
-        public GVFltCallbacks GVFltCallbacks { get; private set; }
+        public RGFltCallbacks RGFltCallbacks { get; private set; }
 
         private RGFSEnlistment CreateEnlistment(string enlistmentRootPath)
         {
@@ -40,7 +40,7 @@ namespace RGFS.PerfProfiling
             return new RGFSContext(tracer, fileSystem, gitRepo, this.Enlistment);
         }
 
-        private GVFltCallbacks CreateGVFltCallbacks()
+        private RGFltCallbacks CreateRGFltCallbacks()
         {
             string error;
             if (!RepoMetadata.TryInitialize(this.Context.Tracer, this.Enlistment.DotRGFSRoot, out error))
@@ -56,7 +56,7 @@ namespace RGFS.PerfProfiling
                 new RetryConfig());
 
             RGFSGitObjects gitObjects = new RGFSGitObjects(this.Context, objectRequestor);
-            return new GVFltCallbacks(this.Context, gitObjects, RepoMetadata.Instance);
+            return new RGFltCallbacks(this.Context, gitObjects, RepoMetadata.Instance);
         }
     }
 }

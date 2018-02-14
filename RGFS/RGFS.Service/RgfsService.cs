@@ -226,11 +226,11 @@ namespace RGFS.Service
 
                         break;
 
-                    case NamedPipeMessages.AttachGvFltRequest.Header:
+                    case NamedPipeMessages.AttachRgFltRequest.Header:
                         try
                         {
-                            NamedPipeMessages.AttachGvFltRequest attachRequest = NamedPipeMessages.AttachGvFltRequest.FromMessage(message);
-                            AttachGvFltHandler attachHandler = new AttachGvFltHandler(activity, connection, attachRequest);
+                            NamedPipeMessages.AttachRgFltRequest attachRequest = NamedPipeMessages.AttachRgFltRequest.FromMessage(message);
+                            AttachRgFltHandler attachHandler = new AttachRgFltHandler(activity, connection, attachRequest);
                             attachHandler.Run();
                         }
                         catch (SerializationException ex)

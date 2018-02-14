@@ -1549,7 +1549,7 @@ namespace RGFS.FunctionalTests.Tests.LongRunningEnlistment
         }
 
         [TestCase]
-        public void ErrorWhenPathTreatsFileAsFolderMatchesNTFS_VirtualGVFltPath()
+        public void ErrorWhenPathTreatsFileAsFolderMatchesNTFS_VirtualRGFltPath()
         {
             FileSystemRunner fileSystem = FileSystemRunner.DefaultRunner;
             string existingFileVirtualPath = this.Enlistment.GetVirtualPathTo("ErrorWhenPathTreatsFileAsFolderMatchesNTFS\\virtual");
@@ -1562,7 +1562,7 @@ namespace RGFS.FunctionalTests.Tests.LongRunningEnlistment
         }
 
         [TestCase]
-        public void ErrorWhenPathTreatsFileAsFolderMatchesNTFS_PartialGVFltPath()
+        public void ErrorWhenPathTreatsFileAsFolderMatchesNTFS_PartialRGFltPath()
         {
             FileSystemRunner fileSystem = FileSystemRunner.DefaultRunner;
 
@@ -1578,7 +1578,7 @@ namespace RGFS.FunctionalTests.Tests.LongRunningEnlistment
         }
 
         [TestCase]
-        public void ErrorWhenPathTreatsFileAsFolderMatchesNTFS_FullGVFltPath()
+        public void ErrorWhenPathTreatsFileAsFolderMatchesNTFS_FullRGFltPath()
         {
             FileSystemRunner fileSystem = FileSystemRunner.DefaultRunner;
 
@@ -1600,513 +1600,513 @@ namespace RGFS.FunctionalTests.Tests.LongRunningEnlistment
         }
 
         [TestCase]
-        public void Native_GVFlt_ModifyFileInScratchAndDir()
+        public void Native_RGFlt_ModifyFileInScratchAndDir()
         {
-            GVFlt_BugRegressionTest.GVFlt_ModifyFileInScratchAndDir(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_BugRegressionTest.RGFlt_ModifyFileInScratchAndDir(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_RMDIRTest1()
+        public void Native_RGFlt_RMDIRTest1()
         {
-            GVFlt_BugRegressionTest.GVFlt_RMDIRTest1(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_BugRegressionTest.RGFlt_RMDIRTest1(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_RMDIRTest2()
+        public void Native_RGFlt_RMDIRTest2()
         {
-            GVFlt_BugRegressionTest.GVFlt_RMDIRTest2(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_BugRegressionTest.RGFlt_RMDIRTest2(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_RMDIRTest3()
+        public void Native_RGFlt_RMDIRTest3()
         {
-            GVFlt_BugRegressionTest.GVFlt_RMDIRTest3(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_BugRegressionTest.RGFlt_RMDIRTest3(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_RMDIRTest4()
+        public void Native_RGFlt_RMDIRTest4()
         {
-            GVFlt_BugRegressionTest.GVFlt_RMDIRTest4(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_BugRegressionTest.RGFlt_RMDIRTest4(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_RMDIRTest5()
+        public void Native_RGFlt_RMDIRTest5()
         {
-            GVFlt_BugRegressionTest.GVFlt_RMDIRTest5(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_BugRegressionTest.RGFlt_RMDIRTest5(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeepNonExistFileUnderPartial()
+        public void Native_RGFlt_DeepNonExistFileUnderPartial()
         {
-            GVFlt_BugRegressionTest.GVFlt_DeepNonExistFileUnderPartial(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_BugRegressionTest.RGFlt_DeepNonExistFileUnderPartial(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_SupersededReparsePoint()
+        public void Native_RGFlt_SupersededReparsePoint()
         {
-            GVFlt_BugRegressionTest.GVFlt_SupersededReparsePoint(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_BugRegressionTest.RGFlt_SupersededReparsePoint(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteVirtualFile_SetDisposition()
+        public void Native_RGFlt_DeleteVirtualFile_SetDisposition()
         {
-            GVFlt_DeleteFileTest.GVFlt_DeleteVirtualFile_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFileTest.RGFlt_DeleteVirtualFile_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteVirtualFile_DeleteOnClose()
+        public void Native_RGFlt_DeleteVirtualFile_DeleteOnClose()
         {
-            GVFlt_DeleteFileTest.GVFlt_DeleteVirtualFile_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFileTest.RGFlt_DeleteVirtualFile_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeletePlaceholder_SetDisposition()
+        public void Native_RGFlt_DeletePlaceholder_SetDisposition()
         {
-            GVFlt_DeleteFileTest.GVFlt_DeletePlaceholder_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFileTest.RGFlt_DeletePlaceholder_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeletePlaceholder_DeleteOnClose()
+        public void Native_RGFlt_DeletePlaceholder_DeleteOnClose()
         {
-            GVFlt_DeleteFileTest.GVFlt_DeletePlaceholder_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFileTest.RGFlt_DeletePlaceholder_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteFullFile_SetDisposition()
+        public void Native_RGFlt_DeleteFullFile_SetDisposition()
         {
-            GVFlt_DeleteFileTest.GVFlt_DeleteFullFile_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFileTest.RGFlt_DeleteFullFile_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteFullFile_DeleteOnClose()
+        public void Native_RGFlt_DeleteFullFile_DeleteOnClose()
         {
-            GVFlt_DeleteFileTest.GVFlt_DeleteFullFile_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFileTest.RGFlt_DeleteFullFile_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteLocalFile_SetDisposition()
+        public void Native_RGFlt_DeleteLocalFile_SetDisposition()
         {
-            GVFlt_DeleteFileTest.GVFlt_DeleteLocalFile_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFileTest.RGFlt_DeleteLocalFile_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteLocalFile_DeleteOnClose()
+        public void Native_RGFlt_DeleteLocalFile_DeleteOnClose()
         {
-            GVFlt_DeleteFileTest.GVFlt_DeleteLocalFile_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFileTest.RGFlt_DeleteLocalFile_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteNotExistFile_SetDisposition()
+        public void Native_RGFlt_DeleteNotExistFile_SetDisposition()
         {
-            GVFlt_DeleteFileTest.GVFlt_DeleteNotExistFile_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFileTest.RGFlt_DeleteNotExistFile_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteNotExistFile_DeleteOnClose()
+        public void Native_RGFlt_DeleteNotExistFile_DeleteOnClose()
         {
-            GVFlt_DeleteFileTest.GVFlt_DeleteNotExistFile_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFileTest.RGFlt_DeleteNotExistFile_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteNonRootVirtualFile_SetDisposition()
+        public void Native_RGFlt_DeleteNonRootVirtualFile_SetDisposition()
         {
-            GVFlt_DeleteFileTest.GVFlt_DeleteNonRootVirtualFile_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFileTest.RGFlt_DeleteNonRootVirtualFile_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteNonRootVirtualFile_DeleteOnClose()
+        public void Native_RGFlt_DeleteNonRootVirtualFile_DeleteOnClose()
         {
-            GVFlt_DeleteFileTest.GVFlt_DeleteNonRootVirtualFile_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFileTest.RGFlt_DeleteNonRootVirtualFile_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteFileOutsideVRoot_SetDisposition()
+        public void Native_RGFlt_DeleteFileOutsideVRoot_SetDisposition()
         {
-            GVFlt_DeleteFileTest.GVFlt_DeleteFileOutsideVRoot_SetDisposition(Path.GetDirectoryName(this.Enlistment.RepoRoot)).ShouldEqual(true);
+            RGFlt_DeleteFileTest.RGFlt_DeleteFileOutsideVRoot_SetDisposition(Path.GetDirectoryName(this.Enlistment.RepoRoot)).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteFileOutsideVRoot_DeleteOnClose()
+        public void Native_RGFlt_DeleteFileOutsideVRoot_DeleteOnClose()
         {
-            GVFlt_DeleteFileTest.GVFlt_DeleteFileOutsideVRoot_DeleteOnClose(Path.GetDirectoryName(this.Enlistment.RepoRoot)).ShouldEqual(true);
+            RGFlt_DeleteFileTest.RGFlt_DeleteFileOutsideVRoot_DeleteOnClose(Path.GetDirectoryName(this.Enlistment.RepoRoot)).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteVirtualNonEmptyFolder_SetDisposition()
+        public void Native_RGFlt_DeleteVirtualNonEmptyFolder_SetDisposition()
         {
-            GVFlt_DeleteFolderTest.GVFlt_DeleteVirtualNonEmptyFolder_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFolderTest.RGFlt_DeleteVirtualNonEmptyFolder_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteVirtualNonEmptyFolder_DeleteOnClose()
+        public void Native_RGFlt_DeleteVirtualNonEmptyFolder_DeleteOnClose()
         {
-            GVFlt_DeleteFolderTest.GVFlt_DeleteVirtualNonEmptyFolder_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFolderTest.RGFlt_DeleteVirtualNonEmptyFolder_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeletePlaceholderNonEmptyFolder_SetDisposition()
+        public void Native_RGFlt_DeletePlaceholderNonEmptyFolder_SetDisposition()
         {
-            GVFlt_DeleteFolderTest.GVFlt_DeletePlaceholderNonEmptyFolder_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFolderTest.RGFlt_DeletePlaceholderNonEmptyFolder_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeletePlaceholderNonEmptyFolder_DeleteOnClose()
+        public void Native_RGFlt_DeletePlaceholderNonEmptyFolder_DeleteOnClose()
         {
-            GVFlt_DeleteFolderTest.GVFlt_DeletePlaceholderNonEmptyFolder_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFolderTest.RGFlt_DeletePlaceholderNonEmptyFolder_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteLocalEmptyFolder_SetDisposition()
+        public void Native_RGFlt_DeleteLocalEmptyFolder_SetDisposition()
         {
-            GVFlt_DeleteFolderTest.GVFlt_DeleteLocalEmptyFolder_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFolderTest.RGFlt_DeleteLocalEmptyFolder_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteLocalEmptyFolder_DeleteOnClose()
+        public void Native_RGFlt_DeleteLocalEmptyFolder_DeleteOnClose()
         {
-            GVFlt_DeleteFolderTest.GVFlt_DeleteLocalEmptyFolder_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFolderTest.RGFlt_DeleteLocalEmptyFolder_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteNonRootVirtualFolder_SetDisposition()
+        public void Native_RGFlt_DeleteNonRootVirtualFolder_SetDisposition()
         {
-            GVFlt_DeleteFolderTest.GVFlt_DeleteNonRootVirtualFolder_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFolderTest.RGFlt_DeleteNonRootVirtualFolder_SetDisposition(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteNonRootVirtualFolder_DeleteOnClose()
+        public void Native_RGFlt_DeleteNonRootVirtualFolder_DeleteOnClose()
         {
-            GVFlt_DeleteFolderTest.GVFlt_DeleteNonRootVirtualFolder_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DeleteFolderTest.RGFlt_DeleteNonRootVirtualFolder_DeleteOnClose(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_EnumEmptyFolder()
+        public void Native_RGFlt_EnumEmptyFolder()
         {
-            GVFlt_DirEnumTest.GVFlt_EnumEmptyFolder(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DirEnumTest.RGFlt_EnumEmptyFolder(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_EnumFolderWithOneFileInRepo()
+        public void Native_RGFlt_EnumFolderWithOneFileInRepo()
         {
-            GVFlt_DirEnumTest.GVFlt_EnumFolderWithOneFileInPackage(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DirEnumTest.RGFlt_EnumFolderWithOneFileInPackage(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_EnumFolderWithOneFileInRepoBeforeScratchFile()
+        public void Native_RGFlt_EnumFolderWithOneFileInRepoBeforeScratchFile()
         {
-            GVFlt_DirEnumTest.GVFlt_EnumFolderWithOneFileInBoth(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DirEnumTest.RGFlt_EnumFolderWithOneFileInBoth(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_EnumFolderWithOneFileInRepoAfterScratchFile()
+        public void Native_RGFlt_EnumFolderWithOneFileInRepoAfterScratchFile()
         {
-            GVFlt_DirEnumTest.GVFlt_EnumFolderWithOneFileInBoth1(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DirEnumTest.RGFlt_EnumFolderWithOneFileInBoth1(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_EnumFolderDeleteExistingFile()
+        public void Native_RGFlt_EnumFolderDeleteExistingFile()
         {
-            GVFlt_DirEnumTest.GVFlt_EnumFolderDeleteExistingFile(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DirEnumTest.RGFlt_EnumFolderDeleteExistingFile(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_EnumFolderSmallBuffer()
+        public void Native_RGFlt_EnumFolderSmallBuffer()
         {
-            GVFlt_DirEnumTest.GVFlt_EnumFolderSmallBuffer(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_DirEnumTest.RGFlt_EnumFolderSmallBuffer(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_ModifyFileInScratchAndCheckLastWriteTime()
+        public void Native_RGFlt_ModifyFileInScratchAndCheckLastWriteTime()
         {
-            GVFlt_FileAttributeTest.GVFlt_ModifyFileInScratchAndCheckLastWriteTime(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_FileAttributeTest.RGFlt_ModifyFileInScratchAndCheckLastWriteTime(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_FileSize()
+        public void Native_RGFlt_FileSize()
         {
-            GVFlt_FileAttributeTest.GVFlt_FileSize(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_FileAttributeTest.RGFlt_FileSize(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_ModifyFileInScratchAndCheckFileSize()
+        public void Native_RGFlt_ModifyFileInScratchAndCheckFileSize()
         {
-            GVFlt_FileAttributeTest.GVFlt_ModifyFileInScratchAndCheckFileSize(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_FileAttributeTest.RGFlt_ModifyFileInScratchAndCheckFileSize(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_FileAttributes()
+        public void Native_RGFlt_FileAttributes()
         {
-            GVFlt_FileAttributeTest.GVFlt_FileAttributes(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_FileAttributeTest.RGFlt_FileAttributes(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_OneEAAttributeWillPass()
+        public void Native_RGFlt_OneEAAttributeWillPass()
         {
-            GVFlt_FileEATest.GVFlt_OneEAAttributeWillPass(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_FileEATest.RGFlt_OneEAAttributeWillPass(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_OpenRootFolder()
+        public void Native_RGFlt_OpenRootFolder()
         {
-            GVFlt_FileOperationTest.GVFlt_OpenRootFolder(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_FileOperationTest.RGFlt_OpenRootFolder(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_WriteAndVerify()
+        public void Native_RGFlt_WriteAndVerify()
         {
-            GVFlt_FileOperationTest.GVFlt_WriteAndVerify(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_FileOperationTest.RGFlt_WriteAndVerify(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_DeleteExistingFile()
+        public void Native_RGFlt_DeleteExistingFile()
         {
-            GVFlt_FileOperationTest.GVFlt_DeleteExistingFile(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_FileOperationTest.RGFlt_DeleteExistingFile(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_OpenNonExistingFile()
+        public void Native_RGFlt_OpenNonExistingFile()
         {
-            GVFlt_FileOperationTest.GVFlt_OpenNonExistingFile(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_FileOperationTest.RGFlt_OpenNonExistingFile(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_NoneToNone()
+        public void Native_RGFlt_MoveFile_NoneToNone()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_NoneToNone(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_NoneToNone(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_VirtualToNone()
+        public void Native_RGFlt_MoveFile_VirtualToNone()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_VirtualToNone(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_VirtualToNone(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_PartialToNone()
+        public void Native_RGFlt_MoveFile_PartialToNone()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_PartialToNone(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_PartialToNone(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_FullToNone()
+        public void Native_RGFlt_MoveFile_FullToNone()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_FullToNone(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_FullToNone(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_LocalToNone()
+        public void Native_RGFlt_MoveFile_LocalToNone()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_LocalToNone(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_LocalToNone(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_VirtualToVirtual()
+        public void Native_RGFlt_MoveFile_VirtualToVirtual()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_VirtualToVirtual(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_VirtualToVirtual(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_VirtualToVirtualFileNameChanged()
+        public void Native_RGFlt_MoveFile_VirtualToVirtualFileNameChanged()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_VirtualToVirtualFileNameChanged(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_VirtualToVirtualFileNameChanged(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_VirtualToPartial()
+        public void Native_RGFlt_MoveFile_VirtualToPartial()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_VirtualToPartial(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_VirtualToPartial(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_PartialToPartial()
+        public void Native_RGFlt_MoveFile_PartialToPartial()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_PartialToPartial(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_PartialToPartial(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_LocalToVirtual()
+        public void Native_RGFlt_MoveFile_LocalToVirtual()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_LocalToVirtual(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_LocalToVirtual(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_VirtualToVirtualIntermidiateDirNotExist()
+        public void Native_RGFlt_MoveFile_VirtualToVirtualIntermidiateDirNotExist()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_VirtualToVirtualIntermidiateDirNotExist(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_VirtualToVirtualIntermidiateDirNotExist(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_VirtualToNoneIntermidiateDirNotExist()
+        public void Native_RGFlt_MoveFile_VirtualToNoneIntermidiateDirNotExist()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_VirtualToNoneIntermidiateDirNotExist(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_VirtualToNoneIntermidiateDirNotExist(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_OutsideToNone()
+        public void Native_RGFlt_MoveFile_OutsideToNone()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_OutsideToNone(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_OutsideToNone(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_OutsideToVirtual()
+        public void Native_RGFlt_MoveFile_OutsideToVirtual()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_OutsideToVirtual(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_OutsideToVirtual(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_OutsideToPartial()
+        public void Native_RGFlt_MoveFile_OutsideToPartial()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_OutsideToPartial(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_OutsideToPartial(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_NoneToOutside()
+        public void Native_RGFlt_MoveFile_NoneToOutside()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_NoneToOutside(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_NoneToOutside(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_VirtualToOutside()
+        public void Native_RGFlt_MoveFile_VirtualToOutside()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_VirtualToOutside(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_VirtualToOutside(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_PartialToOutside()
+        public void Native_RGFlt_MoveFile_PartialToOutside()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_PartialToOutside(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_PartialToOutside(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_OutsideToOutside()
+        public void Native_RGFlt_MoveFile_OutsideToOutside()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_OutsideToOutside(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_OutsideToOutside(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFile_LongFileName()
+        public void Native_RGFlt_MoveFile_LongFileName()
         {
-            GVFlt_MoveFileTest.GVFlt_MoveFile_LongFileName(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFileTest.RGFlt_MoveFile_LongFileName(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFolder_NoneToNone()
+        public void Native_RGFlt_MoveFolder_NoneToNone()
         {
-            GVFlt_MoveFolderTest.GVFlt_MoveFolder_NoneToNone(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFolderTest.RGFlt_MoveFolder_NoneToNone(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFolder_VirtualToNone()
+        public void Native_RGFlt_MoveFolder_VirtualToNone()
         {
-            GVFlt_MoveFolderTest.GVFlt_MoveFolder_VirtualToNone(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFolderTest.RGFlt_MoveFolder_VirtualToNone(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFolder_PartialToNone()
+        public void Native_RGFlt_MoveFolder_PartialToNone()
         {
-            GVFlt_MoveFolderTest.GVFlt_MoveFolder_PartialToNone(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFolderTest.RGFlt_MoveFolder_PartialToNone(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFolder_VirtualToVirtual()
+        public void Native_RGFlt_MoveFolder_VirtualToVirtual()
         {
-            GVFlt_MoveFolderTest.GVFlt_MoveFolder_VirtualToVirtual(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFolderTest.RGFlt_MoveFolder_VirtualToVirtual(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFolder_VirtualToPartial()
+        public void Native_RGFlt_MoveFolder_VirtualToPartial()
         {
-            GVFlt_MoveFolderTest.GVFlt_MoveFolder_VirtualToPartial(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFolderTest.RGFlt_MoveFolder_VirtualToPartial(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFolder_OutsideToNone()
+        public void Native_RGFlt_MoveFolder_OutsideToNone()
         {
-            GVFlt_MoveFolderTest.GVFlt_MoveFolder_OutsideToNone(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFolderTest.RGFlt_MoveFolder_OutsideToNone(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFolder_OutsideToVirtual()
+        public void Native_RGFlt_MoveFolder_OutsideToVirtual()
         {
-            GVFlt_MoveFolderTest.GVFlt_MoveFolder_OutsideToVirtual(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFolderTest.RGFlt_MoveFolder_OutsideToVirtual(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFolder_NoneToOutside()
+        public void Native_RGFlt_MoveFolder_NoneToOutside()
         {
-            GVFlt_MoveFolderTest.GVFlt_MoveFolder_NoneToOutside(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFolderTest.RGFlt_MoveFolder_NoneToOutside(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFolder_VirtualToOutside()
+        public void Native_RGFlt_MoveFolder_VirtualToOutside()
         {
-            GVFlt_MoveFolderTest.GVFlt_MoveFolder_VirtualToOutside(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFolderTest.RGFlt_MoveFolder_VirtualToOutside(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_MoveFolder_OutsideToOutside()
+        public void Native_RGFlt_MoveFolder_OutsideToOutside()
         {
-            GVFlt_MoveFolderTest.GVFlt_MoveFolder_OutsideToOutside(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MoveFolderTest.RGFlt_MoveFolder_OutsideToOutside(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_OpenForReadsSameTime()
+        public void Native_RGFlt_OpenForReadsSameTime()
         {
-            GVFlt_MultiThreadTest.GVFlt_OpenForReadsSameTime(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MultiThreadTest.RGFlt_OpenForReadsSameTime(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_OpenMultipleFilesForReadsSameTime()
+        public void Native_RGFlt_OpenMultipleFilesForReadsSameTime()
         {
-            GVFlt_MultiThreadTest.GVFlt_OpenMultipleFilesForReadsSameTime(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MultiThreadTest.RGFlt_OpenMultipleFilesForReadsSameTime(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_OpenForWritesSameTime()
+        public void Native_RGFlt_OpenForWritesSameTime()
         {
-            GVFlt_MultiThreadTest.GVFlt_OpenForWritesSameTime(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_MultiThreadTest.RGFlt_OpenForWritesSameTime(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_SetLink_ToVirtualFile()
+        public void Native_RGFlt_SetLink_ToVirtualFile()
         {
-            GVFlt_SetLinkTest.GVFlt_SetLink_ToVirtualFile(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_SetLinkTest.RGFlt_SetLink_ToVirtualFile(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_SetLink_ToPlaceHolder()
+        public void Native_RGFlt_SetLink_ToPlaceHolder()
         {
-            GVFlt_SetLinkTest.GVFlt_SetLink_ToPlaceHolder(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_SetLinkTest.RGFlt_SetLink_ToPlaceHolder(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_SetLink_ToFullFile()
+        public void Native_RGFlt_SetLink_ToFullFile()
         {
-            GVFlt_SetLinkTest.GVFlt_SetLink_ToFullFile(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_SetLinkTest.RGFlt_SetLink_ToFullFile(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_SetLink_ToNonExistFileWillFail()
+        public void Native_RGFlt_SetLink_ToNonExistFileWillFail()
         {
-            GVFlt_SetLinkTest.GVFlt_SetLink_ToNonExistFileWillFail(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_SetLinkTest.RGFlt_SetLink_ToNonExistFileWillFail(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_SetLink_NameAlreadyExistWillFail()
+        public void Native_RGFlt_SetLink_NameAlreadyExistWillFail()
         {
-            GVFlt_SetLinkTest.GVFlt_SetLink_NameAlreadyExistWillFail(this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_SetLinkTest.RGFlt_SetLink_NameAlreadyExistWillFail(this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_SetLink_FromOutside()
+        public void Native_RGFlt_SetLink_FromOutside()
         {
-            GVFlt_SetLinkTest.GVFlt_SetLink_FromOutside(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_SetLinkTest.RGFlt_SetLink_FromOutside(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         [TestCase]
-        public void Native_GVFlt_SetLink_ToOutside()
+        public void Native_RGFlt_SetLink_ToOutside()
         {
-            GVFlt_SetLinkTest.GVFlt_SetLink_ToOutside(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
+            RGFlt_SetLinkTest.RGFlt_SetLink_ToOutside(Path.GetDirectoryName(this.Enlistment.RepoRoot), this.Enlistment.RepoRoot).ShouldEqual(true);
         }
 
         private string CreateFileInPhysicalPath(FileSystemRunner fileSystem)
@@ -2156,292 +2156,292 @@ namespace RGFS.FunctionalTests.Tests.LongRunningEnlistment
             public static extern bool EnumerateWithTrailingSlashMatchesWithoutSlashAfterDelete(string virtualRootPath);
         }
 
-        private class GVFlt_BugRegressionTest
+        private class RGFlt_BugRegressionTest
         {
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_ModifyFileInScratchAndDir(string virtualRootPath);
+            public static extern bool RGFlt_ModifyFileInScratchAndDir(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_RMDIRTest1(string virtualRootPath);
+            public static extern bool RGFlt_RMDIRTest1(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_RMDIRTest2(string virtualRootPath);
+            public static extern bool RGFlt_RMDIRTest2(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_RMDIRTest3(string virtualRootPath);
+            public static extern bool RGFlt_RMDIRTest3(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_RMDIRTest4(string virtualRootPath);
+            public static extern bool RGFlt_RMDIRTest4(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_RMDIRTest5(string virtualRootPath);
+            public static extern bool RGFlt_RMDIRTest5(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeepNonExistFileUnderPartial(string virtualRootPath);
+            public static extern bool RGFlt_DeepNonExistFileUnderPartial(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_SupersededReparsePoint(string virtualRootPath);
+            public static extern bool RGFlt_SupersededReparsePoint(string virtualRootPath);
         }
 
-        private class GVFlt_DeleteFileTest
+        private class RGFlt_DeleteFileTest
         {
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteVirtualFile_SetDisposition(string enumFolderSmallBufferPath);
+            public static extern bool RGFlt_DeleteVirtualFile_SetDisposition(string enumFolderSmallBufferPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteVirtualFile_DeleteOnClose(string virtualRootPath);
+            public static extern bool RGFlt_DeleteVirtualFile_DeleteOnClose(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeletePlaceholder_SetDisposition(string virtualRootPath);
+            public static extern bool RGFlt_DeletePlaceholder_SetDisposition(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeletePlaceholder_DeleteOnClose(string virtualRootPath);
+            public static extern bool RGFlt_DeletePlaceholder_DeleteOnClose(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteFullFile_SetDisposition(string virtualRootPath);
+            public static extern bool RGFlt_DeleteFullFile_SetDisposition(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteFullFile_DeleteOnClose(string virtualRootPath);
+            public static extern bool RGFlt_DeleteFullFile_DeleteOnClose(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteLocalFile_SetDisposition(string virtualRootPath);
+            public static extern bool RGFlt_DeleteLocalFile_SetDisposition(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteLocalFile_DeleteOnClose(string virtualRootPath);
+            public static extern bool RGFlt_DeleteLocalFile_DeleteOnClose(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteNotExistFile_SetDisposition(string virtualRootPath);
+            public static extern bool RGFlt_DeleteNotExistFile_SetDisposition(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteNotExistFile_DeleteOnClose(string virtualRootPath);
+            public static extern bool RGFlt_DeleteNotExistFile_DeleteOnClose(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteNonRootVirtualFile_SetDisposition(string virtualRootPath);
+            public static extern bool RGFlt_DeleteNonRootVirtualFile_SetDisposition(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteNonRootVirtualFile_DeleteOnClose(string virtualRootPath);
+            public static extern bool RGFlt_DeleteNonRootVirtualFile_DeleteOnClose(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteFileOutsideVRoot_SetDisposition(string pathOutsideRepo);
+            public static extern bool RGFlt_DeleteFileOutsideVRoot_SetDisposition(string pathOutsideRepo);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteFileOutsideVRoot_DeleteOnClose(string pathOutsideRepo);
+            public static extern bool RGFlt_DeleteFileOutsideVRoot_DeleteOnClose(string pathOutsideRepo);
         }
 
-        private class GVFlt_DeleteFolderTest
+        private class RGFlt_DeleteFolderTest
         {
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteVirtualNonEmptyFolder_SetDisposition(string virtualRootPath);
+            public static extern bool RGFlt_DeleteVirtualNonEmptyFolder_SetDisposition(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteVirtualNonEmptyFolder_DeleteOnClose(string virtualRootPath);
+            public static extern bool RGFlt_DeleteVirtualNonEmptyFolder_DeleteOnClose(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeletePlaceholderNonEmptyFolder_SetDisposition(string virtualRootPath);
+            public static extern bool RGFlt_DeletePlaceholderNonEmptyFolder_SetDisposition(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeletePlaceholderNonEmptyFolder_DeleteOnClose(string virtualRootPath);
+            public static extern bool RGFlt_DeletePlaceholderNonEmptyFolder_DeleteOnClose(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteLocalEmptyFolder_SetDisposition(string virtualRootPath);
+            public static extern bool RGFlt_DeleteLocalEmptyFolder_SetDisposition(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteLocalEmptyFolder_DeleteOnClose(string virtualRootPath);
+            public static extern bool RGFlt_DeleteLocalEmptyFolder_DeleteOnClose(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteNonRootVirtualFolder_SetDisposition(string virtualRootPath);
+            public static extern bool RGFlt_DeleteNonRootVirtualFolder_SetDisposition(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteNonRootVirtualFolder_DeleteOnClose(string virtualRootPath);
+            public static extern bool RGFlt_DeleteNonRootVirtualFolder_DeleteOnClose(string virtualRootPath);
         }
 
-        private class GVFlt_DirEnumTest
+        private class RGFlt_DirEnumTest
         {
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_EnumEmptyFolder(string emptyFolderPath);
+            public static extern bool RGFlt_EnumEmptyFolder(string emptyFolderPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_EnumFolderWithOneFileInPackage(string enumFolderWithOneFileInRepoPath);
+            public static extern bool RGFlt_EnumFolderWithOneFileInPackage(string enumFolderWithOneFileInRepoPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_EnumFolderWithOneFileInBoth(string enumFolderWithOneFileInRepoBeforeScratchPath);
+            public static extern bool RGFlt_EnumFolderWithOneFileInBoth(string enumFolderWithOneFileInRepoBeforeScratchPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_EnumFolderWithOneFileInBoth1(string enumFolderWithOneFileInRepoAfterScratchPath);
+            public static extern bool RGFlt_EnumFolderWithOneFileInBoth1(string enumFolderWithOneFileInRepoAfterScratchPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_EnumFolderDeleteExistingFile(string enumFolderDeleteExistingFilePath);
+            public static extern bool RGFlt_EnumFolderDeleteExistingFile(string enumFolderDeleteExistingFilePath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_EnumFolderSmallBuffer(string enumFolderSmallBufferPath);
+            public static extern bool RGFlt_EnumFolderSmallBuffer(string enumFolderSmallBufferPath);
         }
 
-        private class GVFlt_FileAttributeTest
+        private class RGFlt_FileAttributeTest
         {
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_ModifyFileInScratchAndCheckLastWriteTime(string virtualRootPath);
+            public static extern bool RGFlt_ModifyFileInScratchAndCheckLastWriteTime(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_FileSize(string virtualRootPath);
+            public static extern bool RGFlt_FileSize(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_ModifyFileInScratchAndCheckFileSize(string virtualRootPath);
+            public static extern bool RGFlt_ModifyFileInScratchAndCheckFileSize(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_FileAttributes(string virtualRootPath);
+            public static extern bool RGFlt_FileAttributes(string virtualRootPath);
         }
 
-        private class GVFlt_FileEATest
+        private class RGFlt_FileEATest
         {
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_OneEAAttributeWillPass(string virtualRootPath);
+            public static extern bool RGFlt_OneEAAttributeWillPass(string virtualRootPath);
         }
 
-        private class GVFlt_FileOperationTest
+        private class RGFlt_FileOperationTest
         {
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_OpenRootFolder(string virtualRootPath);
+            public static extern bool RGFlt_OpenRootFolder(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_WriteAndVerify(string virtualRootPath);
+            public static extern bool RGFlt_WriteAndVerify(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_DeleteExistingFile(string virtualRootPath);
+            public static extern bool RGFlt_DeleteExistingFile(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_OpenNonExistingFile(string virtualRootPath);
+            public static extern bool RGFlt_OpenNonExistingFile(string virtualRootPath);
         }
 
-        private class GVFlt_MoveFileTest
+        private class RGFlt_MoveFileTest
         {
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_NoneToNone(string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_NoneToNone(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_VirtualToNone(string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_VirtualToNone(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_PartialToNone(string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_PartialToNone(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_FullToNone(string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_FullToNone(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_LocalToNone(string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_LocalToNone(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_VirtualToVirtual(string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_VirtualToVirtual(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_VirtualToVirtualFileNameChanged(string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_VirtualToVirtualFileNameChanged(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_VirtualToPartial(string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_VirtualToPartial(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_PartialToPartial(string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_PartialToPartial(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_LocalToVirtual(string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_LocalToVirtual(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_VirtualToVirtualIntermidiateDirNotExist(string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_VirtualToVirtualIntermidiateDirNotExist(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_VirtualToNoneIntermidiateDirNotExist(string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_VirtualToNoneIntermidiateDirNotExist(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_OutsideToNone(string pathOutsideRepo, string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_OutsideToNone(string pathOutsideRepo, string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_OutsideToVirtual(string pathOutsideRepo, string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_OutsideToVirtual(string pathOutsideRepo, string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_OutsideToPartial(string pathOutsideRepo, string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_OutsideToPartial(string pathOutsideRepo, string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_NoneToOutside(string pathOutsideRepo, string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_NoneToOutside(string pathOutsideRepo, string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_VirtualToOutside(string pathOutsideRepo, string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_VirtualToOutside(string pathOutsideRepo, string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_PartialToOutside(string pathOutsideRepo, string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_PartialToOutside(string pathOutsideRepo, string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_OutsideToOutside(string pathOutsideRepo, string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_OutsideToOutside(string pathOutsideRepo, string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFile_LongFileName(string virtualRootPath);
+            public static extern bool RGFlt_MoveFile_LongFileName(string virtualRootPath);
         }
 
-        private class GVFlt_MoveFolderTest
+        private class RGFlt_MoveFolderTest
         {
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFolder_NoneToNone(string virtualRootPath);
+            public static extern bool RGFlt_MoveFolder_NoneToNone(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFolder_VirtualToNone(string virtualRootPath);
+            public static extern bool RGFlt_MoveFolder_VirtualToNone(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFolder_PartialToNone(string virtualRootPath);
+            public static extern bool RGFlt_MoveFolder_PartialToNone(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFolder_VirtualToVirtual(string virtualRootPath);
+            public static extern bool RGFlt_MoveFolder_VirtualToVirtual(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFolder_VirtualToPartial(string virtualRootPath);
+            public static extern bool RGFlt_MoveFolder_VirtualToPartial(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFolder_OutsideToNone(string pathOutsideRepo, string virtualRootPath);
+            public static extern bool RGFlt_MoveFolder_OutsideToNone(string pathOutsideRepo, string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFolder_OutsideToVirtual(string pathOutsideRepo, string virtualRootPath);
+            public static extern bool RGFlt_MoveFolder_OutsideToVirtual(string pathOutsideRepo, string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFolder_NoneToOutside(string pathOutsideRepo, string virtualRootPath);
+            public static extern bool RGFlt_MoveFolder_NoneToOutside(string pathOutsideRepo, string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFolder_VirtualToOutside(string pathOutsideRepo, string virtualRootPath);
+            public static extern bool RGFlt_MoveFolder_VirtualToOutside(string pathOutsideRepo, string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_MoveFolder_OutsideToOutside(string pathOutsideRepo, string virtualRootPath);
+            public static extern bool RGFlt_MoveFolder_OutsideToOutside(string pathOutsideRepo, string virtualRootPath);
         }
 
-        private class GVFlt_MultiThreadTest
+        private class RGFlt_MultiThreadTest
         {
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_OpenForReadsSameTime(string virtualRootPath);
+            public static extern bool RGFlt_OpenForReadsSameTime(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_OpenForWritesSameTime(string virtualRootPath);
+            public static extern bool RGFlt_OpenForWritesSameTime(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_OpenMultipleFilesForReadsSameTime(string virtualRootPath);
+            public static extern bool RGFlt_OpenMultipleFilesForReadsSameTime(string virtualRootPath);
         }
 
-        private class GVFlt_SetLinkTest
+        private class RGFlt_SetLinkTest
         {
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_SetLink_ToVirtualFile(string virtualRootPath);
+            public static extern bool RGFlt_SetLink_ToVirtualFile(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_SetLink_ToPlaceHolder(string virtualRootPath);
+            public static extern bool RGFlt_SetLink_ToPlaceHolder(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_SetLink_ToFullFile(string virtualRootPath);
+            public static extern bool RGFlt_SetLink_ToFullFile(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_SetLink_ToNonExistFileWillFail(string virtualRootPath);
+            public static extern bool RGFlt_SetLink_ToNonExistFileWillFail(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_SetLink_NameAlreadyExistWillFail(string virtualRootPath);
+            public static extern bool RGFlt_SetLink_NameAlreadyExistWillFail(string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_SetLink_FromOutside(string pathOutsideRepo, string virtualRootPath);
+            public static extern bool RGFlt_SetLink_FromOutside(string pathOutsideRepo, string virtualRootPath);
 
             [DllImport("RGFS.NativeTests.dll")]
-            public static extern bool GVFlt_SetLink_ToOutside(string pathOutsideRepo, string virtualRootPath);
+            public static extern bool RGFlt_SetLink_ToOutside(string pathOutsideRepo, string virtualRootPath);
         }
 
         private class FileRunnersAndFolders

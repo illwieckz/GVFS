@@ -17,7 +17,7 @@ bool PlaceHolderHasVersionInfo(const char* virtualPath, int version, const WCHAR
 
         SHOULD_EQUAL(reparseInfo->versionInfo.EpochID[0], static_cast<UCHAR>(version));
 
-        SHOULD_EQUAL(_wcsnicmp(sha, static_cast<WCHAR*>(static_cast<void*>(reparseInfo->versionInfo.ContentID)), GVFLT_PLACEHOLDER_ID_LENGTH), 0);
+        SHOULD_EQUAL(_wcsnicmp(sha, static_cast<WCHAR*>(static_cast<void*>(reparseInfo->versionInfo.ContentID)), RGFLT_PLACEHOLDER_ID_LENGTH), 0);
     }
     catch (TestException&)
     {

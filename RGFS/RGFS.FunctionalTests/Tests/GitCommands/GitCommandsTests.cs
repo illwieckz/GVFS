@@ -196,7 +196,7 @@ namespace RGFS.FunctionalTests.Tests.GitCommands
         {
             // 663045 - Confirm that folder can be deleted after deleting file then changing
             // branches
-            string deleteFolderPath = @"GVFlt_DeleteFolderTest\GVFlt_DeletePlaceholderNonEmptyFolder_DeleteOnClose\NonEmptyFolder";
+            string deleteFolderPath = @"RGFlt_DeleteFolderTest\RGFlt_DeletePlaceholderNonEmptyFolder_DeleteOnClose\NonEmptyFolder";
             string deleteFilePath = deleteFolderPath + @"\bar.txt";
 
             this.CommitChangesSwitchBranchSwitchBack(fileSystemAction: () => this.DeleteFile(deleteFilePath));
@@ -206,25 +206,25 @@ namespace RGFS.FunctionalTests.Tests.GitCommands
         [TestCase]
         public void DeleteFolderSwitchBranchTest()
         {
-            this.SwitchBranch(fileSystemAction: () => this.DeleteFolder(@"GVFlt_DeleteFolderTest\GVFlt_DeleteLocalEmptyFolder_DeleteOnClose"));
+            this.SwitchBranch(fileSystemAction: () => this.DeleteFolder(@"RGFlt_DeleteFolderTest\RGFlt_DeleteLocalEmptyFolder_DeleteOnClose"));
         }
 
         [TestCase]
         public void DeleteFolderStageChangesSwitchBranchTest()
         {
-            this.StageChangesSwitchBranch(fileSystemAction: () => this.DeleteFolder(@"GVFlt_DeleteFolderTest\GVFlt_DeleteLocalEmptyFolder_SetDisposition"));
+            this.StageChangesSwitchBranch(fileSystemAction: () => this.DeleteFolder(@"RGFlt_DeleteFolderTest\RGFlt_DeleteLocalEmptyFolder_SetDisposition"));
         }
 
         [TestCase]
         public void DeleteFolderCommitChangesSwitchBranchTest()
         {
-            this.CommitChangesSwitchBranch(fileSystemAction: () => this.DeleteFolder(@"GVFlt_DeleteFolderTest\GVFlt_DeleteNonRootVirtualFolder_DeleteOnClose"));
+            this.CommitChangesSwitchBranch(fileSystemAction: () => this.DeleteFolder(@"RGFlt_DeleteFolderTest\RGFlt_DeleteNonRootVirtualFolder_DeleteOnClose"));
         }
 
         [TestCase]
         public void DeleteFolderCommitChangesSwitchBranchSwitchBackTest()
         {
-            this.CommitChangesSwitchBranchSwitchBack(fileSystemAction: () => this.DeleteFolder(@"GVFlt_DeleteFolderTest\GVFlt_DeleteNonRootVirtualFolder_SetDisposition"));
+            this.CommitChangesSwitchBranchSwitchBack(fileSystemAction: () => this.DeleteFolder(@"RGFlt_DeleteFolderTest\RGFlt_DeleteNonRootVirtualFolder_SetDisposition"));
         }
 
         [TestCase]
@@ -318,9 +318,9 @@ namespace RGFS.FunctionalTests.Tests.GitCommands
         [TestCase]
         public void OverwriteFileInSubfolderAndCommitOnNewBranchSwitchDeleteFolderAndSwitchBack()
         {
-            string overwrittenFileParentFolderPath = @"GVFlt_DeleteFolderTest\GVFlt_DeletePlaceholderNonEmptyFolder_SetDisposition";
+            string overwrittenFileParentFolderPath = @"RGFlt_DeleteFolderTest\RGFlt_DeletePlaceholderNonEmptyFolder_SetDisposition";
 
-            // GVFlt_DeleteFolderTest\GVFlt_DeletePlaceholderNonEmptyFolder_SetDispositiontestfile.txt already exists in the repo as TestFile.txt
+            // RGFlt_DeleteFolderTest\RGFlt_DeletePlaceholderNonEmptyFolder_SetDispositiontestfile.txt already exists in the repo as TestFile.txt
             string fileToOverwritePath = overwrittenFileParentFolderPath + @"\testfile.txt";
             string newFileContents = "test contents";
 
@@ -334,7 +334,7 @@ namespace RGFS.FunctionalTests.Tests.GitCommands
             this.ValidateGitCommand("checkout " + this.ControlGitRepo.Commitish);
             this.ValidateGitCommand("checkout tests/functional/OverwriteFileInSubfolderAndCommitOnNewBranchSwitchDeleteFolderAndSwitchBack");
 
-            string subFolderPath = @"GVFlt_DeleteFolderTest\GVFlt_DeletePlaceholderNonEmptyFolder_SetDisposition\NonEmptyFolder";
+            string subFolderPath = @"RGFlt_DeleteFolderTest\RGFlt_DeletePlaceholderNonEmptyFolder_SetDisposition\NonEmptyFolder";
             this.ShouldNotExistOnDisk(subFolderPath);
             this.FolderShouldExist(overwrittenFileParentFolderPath);
             this.FileShouldHaveContents(fileToOverwritePath, newFileContents);
@@ -345,8 +345,8 @@ namespace RGFS.FunctionalTests.Tests.GitCommands
         {
             // 663045 - Confirm that grandparent folder can be deleted after adding a (granchild) file
             // then changing branches
-            string newFileParentFolderPath = @"GVFlt_DeleteFolderTest\GVFlt_DeleteVirtualNonEmptyFolder_DeleteOnClose\NonEmptyFolder";
-            string newFileGrandParentFolderPath = @"GVFlt_DeleteFolderTest\GVFlt_DeleteVirtualNonEmptyFolder_DeleteOnClose";
+            string newFileParentFolderPath = @"RGFlt_DeleteFolderTest\RGFlt_DeleteVirtualNonEmptyFolder_DeleteOnClose\NonEmptyFolder";
+            string newFileGrandParentFolderPath = @"RGFlt_DeleteFolderTest\RGFlt_DeleteVirtualNonEmptyFolder_DeleteOnClose";
             string newFilePath = newFileParentFolderPath + @"\testfile.txt";
             string newFileContents = "test contents";
 
@@ -498,19 +498,19 @@ namespace RGFS.FunctionalTests.Tests.GitCommands
             // 692765 - Recursive sparse-checkout entries for folders should be case insensitive when
             // changing branches
 
-            string folderName = "GVFlt_MultiThreadTest";
+            string folderName = "RGFlt_MultiThreadTest";
 
-            // Confirm that no other test has caused "GVFlt_MultiThreadTest" to be added to the sparse-checkout
+            // Confirm that no other test has caused "RGFlt_MultiThreadTest" to be added to the sparse-checkout
             string sparseFile = Path.Combine(this.Enlistment.RepoRoot, TestConstants.DotGit.Info.SparseCheckout);
             sparseFile.ShouldBeAFile(this.FileSystem).WithContents().ShouldNotContain(ignoreCase: true, unexpectedSubstrings: folderName);
 
-            this.FolderShouldHaveCaseMatchingName(folderName, "GVFlt_MultiThreadTest");
+            this.FolderShouldHaveCaseMatchingName(folderName, "RGFlt_MultiThreadTest");
             this.DeleteFolder(folderName);
 
-            // b5fd7d23706a18cff3e2b8225588d479f7e51138 is the commit prior to deleting GVFLT_MultiThreadTest 
-            // and re-adding it as as GVFlt_MultiThreadTest
+            // b5fd7d23706a18cff3e2b8225588d479f7e51138 is the commit prior to deleting RGFLT_MultiThreadTest 
+            // and re-adding it as as RGFlt_MultiThreadTest
             this.ValidateGitCommand("checkout b5fd7d23706a18cff3e2b8225588d479f7e51138");
-            this.FolderShouldHaveCaseMatchingName(folderName, "GVFLT_MultiThreadTest");
+            this.FolderShouldHaveCaseMatchingName(folderName, "RGFLT_MultiThreadTest");
         }
 
         [TestCase]

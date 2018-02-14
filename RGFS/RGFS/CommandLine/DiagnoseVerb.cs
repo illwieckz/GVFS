@@ -19,11 +19,11 @@ namespace RGFS.CommandLine
         private const string DiagnoseVerbName = "diagnose";
 
         private const string System32LogFilesRoot = @"%SystemRoot%\System32\LogFiles";
-        private const string GVFltLogFolderName = "GvFlt";
+        private const string RGFltLogFolderName = "RgFlt";
 
-        // From "Autologger" section of gvflt.inf
-        private const string GvFltLoggerGuid = "5f6d2558-5c94-48f9-add0-65bc678aa091";
-        private const string GvFltLoggerSessionName = "Microsoft-Windows-Git-Filter-Log";
+        // From "Autologger" section of rgflt.inf
+        private const string RgFltLoggerGuid = "5f6d2558-5c94-48f9-add0-65bc678aa091";
+        private const string RgFltLoggerSessionName = "Microsoft-Windows-Git-Filter-Log";
 
         private TextWriter diagnosticLogFileWriter;
 
@@ -75,10 +75,10 @@ namespace RGFS.CommandLine
                         // .rgfs
                         this.CopyAllFiles(enlistment.EnlistmentRoot, archiveFolderPath, RGFSConstants.DotRGFS.Root, copySubFolders: false);
 
-                        // gvflt
-                        this.FlushGvFltLogBuffers();
+                        // rgflt
+                        this.FlushRgFltLogBuffers();
                         string system32LogFilesPath = Environment.ExpandEnvironmentVariables(System32LogFilesRoot);
-                        this.CopyAllFiles(system32LogFilesPath, archiveFolderPath, GVFltLogFolderName, copySubFolders: false);
+                        this.CopyAllFiles(system32LogFilesPath, archiveFolderPath, RGFltLogFolderName, copySubFolders: false);
 
                         // .git
                         this.CopyAllFiles(enlistment.WorkingDirectoryRoot, archiveFolderPath, RGFSConstants.DotGit.Root, copySubFolders: false);
@@ -402,22 +402,22 @@ namespace RGFS.CommandLine
             this.CopyAllFiles(sourceFolder, targetFolder, databaseName, copySubFolders: false);
         }
 
-        private void FlushGvFltLogBuffers()
+        private void FlushRgFltLogBuffers()
         {
             try
             {
                 string logfileName;
-                uint result = NativeMethods.FlushTraceLogger(GvFltLoggerSessionName, GvFltLoggerGuid, out logfileName);
+                uint result = NativeMethods.FlushTraceLogger(RgFltLoggerSessionName, RgFltLoggerGuid, out logfileName);
                 if (result != 0)
                 {
                     this.WriteMessage(string.Format(
-                        "Failed to flush GvFlt log buffers {0}",
+                        "Failed to flush RgFlt log buffers {0}",
                         result));
                 }
             }
             catch (Exception e)
             {
-                this.WriteMessage(string.Format("Failed to flush GvFlt log buffers, exception: {0}", e));
+                this.WriteMessage(string.Format("Failed to flush RgFlt log buffers, exception: {0}", e));
             }
         }
     }

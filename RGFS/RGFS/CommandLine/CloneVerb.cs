@@ -5,7 +5,7 @@ using RGFS.Common.Git;
 using RGFS.Common.Http;
 using RGFS.Common.NamedPipes;
 using RGFS.Common.Tracing;
-using RGFS.GVFlt;
+using RGFS.RGFlt;
 using Microsoft.Diagnostics.Tracing;
 using System;
 using System.IO;
@@ -80,7 +80,7 @@ namespace RGFS.CommandLine
 
             this.EnlistmentRootPath = this.GetCloneRoot();
 
-            this.CheckGVFltHealthy();
+            this.CheckRGFltHealthy();
             this.CheckNotInsideExistingRepo();
             this.BlockEmptyCacheServerUrl(this.CacheServerUrl);
            
@@ -469,11 +469,11 @@ namespace RGFS.CommandLine
             }
 
             // Prepare the working directory folder for RGFS last to ensure that rgfs mount will fail if rgfs clone has failed
-            string prepGVFltError;
-            if (!GVFltCallbacks.TryPrepareFolderForGVFltCallbacks(enlistment.WorkingDirectoryRoot, out prepGVFltError))
+            string prepRGFltError;
+            if (!RGFltCallbacks.TryPrepareFolderForRGFltCallbacks(enlistment.WorkingDirectoryRoot, out prepRGFltError))
             {
-                tracer.RelatedError(prepGVFltError);
-                return new Result(prepGVFltError);
+                tracer.RelatedError(prepRGFltError);
+                return new Result(prepRGFltError);
             }
 
             return new Result(true);

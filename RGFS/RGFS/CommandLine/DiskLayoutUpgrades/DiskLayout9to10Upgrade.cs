@@ -1,7 +1,7 @@
 ﻿using RGFS.Common;
 using RGFS.Common.FileSystem;
 using RGFS.Common.Tracing;
-using RGFS.GVFlt;
+using RGFS.RGFlt;
 using Microsoft.Isam.Esent;
 using Microsoft.Isam.Esent.Collections.Generic;
 using System.Collections.Generic;
@@ -117,8 +117,8 @@ namespace RGFS.CommandLine.DiskLayoutUpgrades
                 string newBackgroundOpsFolder = Path.Combine(dotRGFSRoot, RGFSConstants.DotRGFS.Databases.BackgroundGitOperations);
                 try
                 {
-                    using (PersistentDictionary<long, GVFltCallbacks.BackgroundGitUpdate> oldBackgroundOps =
-                        new PersistentDictionary<long, GVFltCallbacks.BackgroundGitUpdate>(esentBackgroundOpsFolder))
+                    using (PersistentDictionary<long, RGFltCallbacks.BackgroundGitUpdate> oldBackgroundOps =
+                        new PersistentDictionary<long, RGFltCallbacks.BackgroundGitUpdate>(esentBackgroundOpsFolder))
                     {
                         string error;
                         BackgroundGitUpdateQueue newBackgroundOps;
@@ -135,7 +135,7 @@ namespace RGFS.CommandLine.DiskLayoutUpgrades
 
                         using (newBackgroundOps)
                         {
-                            foreach (KeyValuePair<long, GVFltCallbacks.BackgroundGitUpdate> kvp in oldBackgroundOps)
+                            foreach (KeyValuePair<long, RGFltCallbacks.BackgroundGitUpdate> kvp in oldBackgroundOps)
                             {
                                 tracer.RelatedInfo("Copying ESENT entry: {0} = {1}", kvp.Key, kvp.Value);
                                 newBackgroundOps.EnqueueAndFlush(kvp.Value);

@@ -157,9 +157,9 @@ namespace RGFS.FunctionalTests.Tests.EnlistmentPerFixture
             this.Enlistment.MountRGFS();
         }
 
-        // Ported from GVFlt's BugRegressionTest
+        // Ported from RGFlt's BugRegressionTest
         [TestCase]
-        public void GVFlt_CMDHangNoneActiveInstance()
+        public void RGFlt_CMDHangNoneActiveInstance()
         {
             this.Enlistment.UnmountRGFS();
 

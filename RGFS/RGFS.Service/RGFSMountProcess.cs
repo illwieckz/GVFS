@@ -24,7 +24,7 @@ namespace RGFS.Service
         public bool Mount(string repoRoot)
         {            
             string error;
-            if (!GvFltFilter.IsHealthy(out error, this.tracer))
+            if (!RgFltFilter.IsHealthy(out error, this.tracer))
             {
                 return false;
             }
@@ -36,7 +36,7 @@ namespace RGFS.Service
             ExcludeFromAntiVirusHandler.CheckAntiVirusExclusion(this.tracer, repoRoot, out isExcluded, out errorMessage);
 
             string unusedMessage;
-            if (!GvFltFilter.TryAttach(this.tracer, repoRoot, out unusedMessage))
+            if (!RgFltFilter.TryAttach(this.tracer, repoRoot, out unusedMessage))
             {
                 return false;
             }

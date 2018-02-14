@@ -4,7 +4,7 @@ using RGFS.Common.Git;
 using RGFS.Common.Http;
 using RGFS.Common.NamedPipes;
 using RGFS.Common.Tracing;
-using RGFS.GVFlt;
+using RGFS.RGFlt;
 using Microsoft.Diagnostics.Tracing;
 using Microsoft.Win32;
 using Microsoft.Win32.SafeHandles;
@@ -25,7 +25,7 @@ namespace RGFS.Mount
 
         private readonly bool showDebugWindow;
 
-        private GVFltCallbacks gvfltCallbacks;
+        private RGFltCallbacks rgfltCallbacks;
         private RGFSEnlistment enlistment;
         private ITracer tracer;
 
@@ -239,10 +239,10 @@ namespace RGFS.Mount
                 Console.ReadLine();
             }
 
-            if (this.gvfltCallbacks != null)
+            if (this.rgfltCallbacks != null)
             {
-                this.gvfltCallbacks.Dispose();
-                this.gvfltCallbacks = null;
+                this.rgfltCallbacks.Dispose();
+                this.rgfltCallbacks = null;
             }
             
             Environment.Exit((int)ReturnCode.GenericError);
@@ -316,7 +316,7 @@ namespace RGFS.Mount
             else
             {
                 bool lockAcquired = false;
-                if (this.gvfltCallbacks.IsReadyForExternalAcquireLockRequests())
+                if (this.rgfltCallbacks.IsReadyForExternalAcquireLockRequests())
                 {
                     lockAcquired = this.rgfsLock.TryAcquireLock(requester, out externalHolder);                   
                 }
@@ -346,7 +346,7 @@ namespace RGFS.Mount
         private void HandleReleaseLockRequest(string messageBody, NamedPipeServer.Connection connection)
         {
             NamedPipeMessages.LockRequest request = new NamedPipeMessages.LockRequest(messageBody);
-            NamedPipeMessages.ReleaseLock.Response response = this.gvfltCallbacks.TryReleaseExternalLock(request.RequestData.PID);
+            NamedPipeMessages.ReleaseLock.Response response = this.rgfltCallbacks.TryReleaseExternalLock(request.RequestData.PID);
             connection.TrySendResponse(response.CreateMessage());
         }
 
@@ -403,7 +403,7 @@ namespace RGFS.Mount
 
                 case MountState.Ready:
                     response.MountStatus = NamedPipeMessages.GetStatus.Ready;
-                    response.BackgroundOperationCount = this.gvfltCallbacks.GetBackgroundOperationCount();
+                    response.BackgroundOperationCount = this.rgfltCallbacks.GetBackgroundOperationCount();
                     break;
 
                 case MountState.Unmounting:
@@ -480,7 +480,7 @@ namespace RGFS.Mount
             
             GitObjectsHttpRequestor objectRequestor = new GitObjectsHttpRequestor(context.Tracer, context.Enlistment, cache, this.retryConfig);
             this.gitObjects = new RGFSGitObjects(context, objectRequestor);
-            this.gvfltCallbacks = this.CreateOrReportAndExit(() => new GVFltCallbacks(context, this.gitObjects, RepoMetadata.Instance), "Failed to create src folder callbacks");
+            this.rgfltCallbacks = this.CreateOrReportAndExit(() => new RGFltCallbacks(context, this.gitObjects, RepoMetadata.Instance), "Failed to create src folder callbacks");
 
             int persistedVersion;
             if (!RepoMetadata.Instance.TryGetOnDiskLayoutVersion(out persistedVersion, out error))
@@ -498,7 +498,7 @@ namespace RGFS.Mount
 
             try
             {
-                if (!this.gvfltCallbacks.TryStart(out error))
+                if (!this.rgfltCallbacks.TryStart(out error))
                 {
                     this.FailMountAndExit("Error: {0}. \r\nPlease confirm that rgfs clone completed without error.", error);
                 }
@@ -510,7 +510,7 @@ namespace RGFS.Mount
 
             this.AcquireFolderLocks(context);
 
-            this.heartbeat = new HeartbeatThread(this.tracer, this.gvfltCallbacks);
+            this.heartbeat = new HeartbeatThread(this.tracer, this.rgfltCallbacks);
             this.heartbeat.Start();
         }
 
@@ -524,11 +524,11 @@ namespace RGFS.Mount
                 this.heartbeat = null;
             }
 
-            if (this.gvfltCallbacks != null)
+            if (this.rgfltCallbacks != null)
             {
-                this.gvfltCallbacks.Stop();
-                this.gvfltCallbacks.Dispose();
-                this.gvfltCallbacks = null;
+                this.rgfltCallbacks.Stop();
+                this.rgfltCallbacks.Dispose();
+                this.rgfltCallbacks = null;
             }
         }
     }

@@ -46,4 +46,4 @@ Visual Studio Team Services (https://www.visualstudio.com/team-services/), and p
 
 The RGFS source code in this repo is available under the MIT license. See [License.md](License.md).
 
-RGFS relies on the GvFlt filter driver, available as a prerelease NuGet package with its own [license](GvFlt_EULA.md).
+RGFS relies on the RgFlt filter driver, available as a prerelease NuGet package with its own [license](RgFlt_EULA.md).

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <Import Project="..\RGFS.GvFltWrapper\GvFlt.props" />
+  <Import Project="..\RGFS.RgFltWrapper\RgFlt.props" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -129,13 +129,13 @@
       <Project>{374bf1e5-0b2d-4d4a-bd5e-4212299def09}</Project>
       <Name>RGFS.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RGFS.GvFltWrapper\GvLib.vcxproj">
+    <ProjectReference Include="..\RGFS.RgFltWrapper\GvLib.vcxproj">
       <Project>{fb0831ae-9997-401b-b31f-3a065fdbeb20}</Project>
       <Name>GvLib.Managed</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RGFS.GVFlt\RGFS.GVFlt.csproj">
+    <ProjectReference Include="..\RGFS.RGFlt\RGFS.RGFlt.csproj">
       <Project>{1118b427-7063-422f-83b9-5023c8ec5a7a}</Project>
-      <Name>RGFS.GVFlt</Name>
+      <Name>RGFS.RGFlt</Name>
     </ProjectReference>
     <!-- This reference is to get the RGFS.Mount.exe to the output directory of RGFS -->
     <ProjectReference Include="..\RGFS.Mount\RGFS.Mount.csproj">
@@ -157,7 +157,7 @@
     <PostBuildEvent>xcopy /Y $(SolutionDir)..\BuildOutput\RGFS.ReadObjectHook\bin\$(Platform)\$(Configuration)\RGFS.ReadObjectHook.* $(TargetDir)
 xcopy /Y $(SolutionDir)..\BuildOutput\RGFS.Hooks\bin\$(Platform)\$(Configuration)\RGFS.Hooks.* $(TargetDir)
 xcopy /Y $(SolutionDir)..\BuildOutput\GitHooksLoader\bin\$(Platform)\$(Configuration)\GitHooksLoader.* $(TargetDir)
-cmd /c ""c:\Program Files (x86)\Inno Setup 5\ISCC.exe" /DPlatformAndConfiguration="$(Platform)\$(Configuration)" /DGvFltPackage="$(GvFltPackage)" $(TargetDir)Setup.iss"</PostBuildEvent>
+cmd /c ""c:\Program Files (x86)\Inno Setup 5\ISCC.exe" /DPlatformAndConfiguration="$(Platform)\$(Configuration)" /DRgFltPackage="$(RgFltPackage)" $(TargetDir)Setup.iss"</PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\..\..\packages\StyleCop.Error.MSBuild.1.0.0\build\StyleCop.Error.MSBuild.Targets" Condition="Exists('..\..\..\packages\StyleCop.Error.MSBuild.1.0.0\build\StyleCop.Error.MSBuild.Targets')" />
   <Import Project="..\..\..\packages\StyleCop.MSBuild.4.7.54.0\build\StyleCop.MSBuild.Targets" Condition="Exists('..\..\..\packages\StyleCop.MSBuild.4.7.54.0\build\StyleCop.MSBuild.Targets')" />

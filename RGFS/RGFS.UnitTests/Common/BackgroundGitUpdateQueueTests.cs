@@ -1,13 +1,13 @@
 ﻿using RGFS.Common;
 using RGFS.Common.FileSystem;
-using RGFS.GVFlt;
+using RGFS.RGFlt;
 using RGFS.Tests.Should;
 using RGFS.UnitTests.Category;
 using RGFS.UnitTests.Mock;
 using NUnit.Framework;
 using System.IO;
 using System.Text;
-using static RGFS.GVFlt.GVFltCallbacks;
+using static RGFS.RGFlt.RGFltCallbacks;
 
 namespace RGFS.UnitTests.Common
 {

@@ -99,12 +99,12 @@
     <Compile Include="FastFetch\BatchObjectDownloadJobTests.cs" />
     <Compile Include="FastFetch\DiffHelperTests.cs" />
     <Compile Include="FastFetch\FastFetchTracingTests.cs" />
-    <Compile Include="GVFlt\DotGit\AlwaysExcludeFileTests.cs" />
-    <Compile Include="GVFlt\GVFltActiveEnumerationTests.cs" />
-    <Compile Include="GVFlt\PathUtilTests.cs" />
-    <Compile Include="GVFlt\PatternMatcherTests.cs" />
-    <Compile Include="GVFlt\DotGit\FileSerializerTests.cs" />
-    <Compile Include="GVFlt\GVFltCallbacksTests.cs" />
+    <Compile Include="RGFlt\DotGit\AlwaysExcludeFileTests.cs" />
+    <Compile Include="RGFlt\RGFltActiveEnumerationTests.cs" />
+    <Compile Include="RGFlt\PathUtilTests.cs" />
+    <Compile Include="RGFlt\PatternMatcherTests.cs" />
+    <Compile Include="RGFlt\DotGit\FileSerializerTests.cs" />
+    <Compile Include="RGFlt\RGFltCallbacksTests.cs" />
     <Compile Include="Mock\Common\MockEnlistment.cs" />
     <Compile Include="Mock\Common\MockTracer.cs" />
     <Compile Include="Mock\FileSystem\MockFile.cs" />
@@ -118,11 +118,11 @@
     <Compile Include="Mock\Git\MockGitRepo.cs" />
     <Compile Include="Mock\Git\MockRGFSGitObjects.cs" />
     <Compile Include="Mock\Common\MockPhysicalGitObjects.cs" />
-    <Compile Include="Mock\RGFS.GvFlt\DotGit\MockGitIndexProjection.cs" />
-    <Compile Include="Mock\RGFS.GvFlt\MockReliableBackgroundOperations.cs" />
+    <Compile Include="Mock\RGFS.RgFlt\DotGit\MockGitIndexProjection.cs" />
+    <Compile Include="Mock\RGFS.RgFlt\MockReliableBackgroundOperations.cs" />
     <Compile Include="Mock\MockCacheServerInfo.cs" />
     <Compile Include="Mock\Git\MockGitProcess.cs" />
-    <Compile Include="Mock\GvFlt\MockVirtualizationInstance.cs" />
+    <Compile Include="Mock\RgFlt\MockVirtualizationInstance.cs" />
     <Compile Include="Mock\ReusableMemoryStream.cs" />
     <Compile Include="Git\GitAuthenticationTests.cs" />
     <Compile Include="Git\RGFSGitObjectsTests.cs" />
@@ -152,13 +152,13 @@
       <Project>{374bf1e5-0b2d-4d4a-bd5e-4212299def09}</Project>
       <Name>RGFS.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RGFS.GvFltWrapper\GvLib.vcxproj">
+    <ProjectReference Include="..\RGFS.RgFltWrapper\GvLib.vcxproj">
       <Project>{fb0831ae-9997-401b-b31f-3a065fdbeb20}</Project>
       <Name>GvLib.Managed</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RGFS.GVFlt\RGFS.GVFlt.csproj">
+    <ProjectReference Include="..\RGFS.RGFlt\RGFS.RGFlt.csproj">
       <Project>{1118b427-7063-422f-83b9-5023c8ec5a7a}</Project>
-      <Name>RGFS.GVFlt</Name>
+      <Name>RGFS.RGFlt</Name>
     </ProjectReference>
     <ProjectReference Include="..\RGFS.Service\RGFS.Service.csproj">
       <Project>{b8c1dfba-cafd-4f7e-a1a3-e11907b5467b}</Project>

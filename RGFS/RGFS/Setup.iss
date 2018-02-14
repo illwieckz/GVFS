@@ -11,7 +11,7 @@
 #define MyAppExeName "RGFS.exe"
 #define EnvironmentKey "SYSTEM\CurrentControlSet\Control\Session Manager\Environment"
 
-#define GVFltRelative "..\..\..\..\..\packages\" + GvFltPackage + "\filter" 
+#define RGFltRelative "..\..\..\..\..\packages\" + RgFltPackage + "\filter" 
 #define RGFSCommonRelative "..\..\..\..\RGFS.Common\bin"
 #define HooksRelative "..\..\..\..\RGFS.Hooks\bin"
 #define HooksLoaderRelative "..\..\..\..\GitHooksLoader\bin"
@@ -61,10 +61,10 @@ Name: "full"; Description: "Full installation"; Flags: iscustom;
 [Components]
 
 [Files]
-; GVFlt Files
-DestDir: "{app}\Filter"; Flags: ignoreversion; Source:"{#GVFltRelative}\GvFlt.sys"
-; gvflt.inf is declared explicitly last within the filter files, so we run the GVFlt install only once after required filter files are present
-DestDir: "{app}\Filter"; Flags: ignoreversion; Source: "{#GVFltRelative}\gvflt.inf"; AfterInstall: InstallGVFlt
+; RGFlt Files
+DestDir: "{app}\Filter"; Flags: ignoreversion; Source:"{#RGFltRelative}\RgFlt.sys"
+; rgflt.inf is declared explicitly last within the filter files, so we run the RGFlt install only once after required filter files are present
+DestDir: "{app}\Filter"; Flags: ignoreversion; Source: "{#RGFltRelative}\rgflt.inf"; AfterInstall: InstallRGFlt
 
 ; GitHooks Files
 DestDir: "{app}"; Flags: ignoreversion; Source:"{#HooksRelative}\{#PlatformAndConfiguration}\RGFS.Hooks.pdb"
@@ -90,7 +90,7 @@ DestDir: "{app}"; Flags: ignoreversion; Source:"Esent.Interop.pdb"
 DestDir: "{app}"; Flags: ignoreversion; Source:"Esent.Isam.pdb"
 DestDir: "{app}"; Flags: ignoreversion; Source:"FastFetch.pdb"
 DestDir: "{app}"; Flags: ignoreversion; Source:"RGFS.Common.pdb"
-DestDir: "{app}"; Flags: ignoreversion; Source:"RGFS.GVFlt.pdb"
+DestDir: "{app}"; Flags: ignoreversion; Source:"RGFS.RGFlt.pdb"
 DestDir: "{app}"; Flags: ignoreversion; Source:"RGFS.pdb"
 
 ; RGFS.Service.UI Files
@@ -107,7 +107,7 @@ DestDir: "{app}"; Flags: ignoreversion; Source:"Esent.Collections.dll"
 DestDir: "{app}"; Flags: ignoreversion; Source:"Esent.Interop.dll"
 DestDir: "{app}"; Flags: ignoreversion; Source:"Esent.Isam.dll"
 DestDir: "{app}"; Flags: ignoreversion; Source:"RGFS.Common.dll"
-DestDir: "{app}"; Flags: ignoreversion; Source:"RGFS.GVFlt.dll"
+DestDir: "{app}"; Flags: ignoreversion; Source:"RGFS.RGFlt.dll"
 DestDir: "{app}"; Flags: ignoreversion; Source:"GvLib.Managed.dll"
 DestDir: "{app}"; Flags: ignoreversion; Source:"GvLib.dll"
 DestDir: "{app}"; Flags: ignoreversion; Source:"Microsoft.Diagnostics.Tracing.EventSource.dll"
@@ -263,7 +263,7 @@ begin
     end;
 end;
 
-procedure InstallGVFlt();
+procedure InstallRGFlt();
 var
   ResultCode: integer;
   StatusText: string;
@@ -272,26 +272,26 @@ begin
   InstallSuccessful := False;
 
   StatusText := WizardForm.StatusLabel.Caption;
-  WizardForm.StatusLabel.Caption := 'Installing GVFlt Driver.';
+  WizardForm.StatusLabel.Caption := 'Installing RGFlt Driver.';
   WizardForm.ProgressGauge.Style := npbstMarquee;
 
   try
-    Exec(ExpandConstant('SC.EXE'), 'stop gvflt', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
+    Exec(ExpandConstant('SC.EXE'), 'stop rgflt', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
 
     // Note: Programatic install of INF notifies user if the driver being upgraded to is older than the existing, otherwise it works silently... doesn't seem like there is a way to block
-    if Exec(ExpandConstant('RUNDLL32.EXE'), ExpandConstant('SETUPAPI.DLL,InstallHinfSection DefaultInstall 128 {app}\Filter\gvflt.inf'), '', SW_HIDE, ewWaitUntilTerminated, ResultCode) then
+    if Exec(ExpandConstant('RUNDLL32.EXE'), ExpandConstant('SETUPAPI.DLL,InstallHinfSection DefaultInstall 128 {app}\Filter\rgflt.inf'), '', SW_HIDE, ewWaitUntilTerminated, ResultCode) then
       begin
         InstallSuccessful := True;
       end;
   finally
     WizardForm.StatusLabel.Caption := StatusText;
     WizardForm.ProgressGauge.Style := npbstNormal;    
-    Exec(ExpandConstant('SC.EXE'), 'start gvflt', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
+    Exec(ExpandConstant('SC.EXE'), 'start rgflt', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
   end;
 
   if InstallSuccessful = False then
     begin
-      RaiseException('Fatal: An error occured while installing GVFlt drivers.');
+      RaiseException('Fatal: An error occured while installing RGFlt drivers.');
     end;
 end;
 

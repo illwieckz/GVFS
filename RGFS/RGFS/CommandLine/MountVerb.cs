@@ -6,7 +6,7 @@ using RGFS.Common.Git;
 using RGFS.Common.Http;
 using RGFS.Common.NamedPipes;
 using RGFS.Common.Tracing;
-using RGFS.GVFlt.DotGit;
+using RGFS.RGFlt.DotGit;
 using Microsoft.Diagnostics.Tracing;
 using System;
 using System.IO;
@@ -59,7 +59,7 @@ namespace RGFS.CommandLine
 
         protected override void PreCreateEnlistment()
         {
-            this.CheckGVFltHealthy();
+            this.CheckRGFltHealthy();
 
             string enlistmentRoot = Paths.GetRGFSEnlistmentRoot(this.EnlistmentRootPath);
             if (enlistmentRoot == null)
@@ -124,12 +124,12 @@ namespace RGFS.CommandLine
                     });
 
                 // TODO 1050199: Once the service is an optional component, RGFS should only attempt to attach
-                // GvFlt via the service if the service is present\enabled
-                if (!GvFltFilter.TryAttach(tracer, enlistment.EnlistmentRoot, out errorMessage))
+                // RgFlt via the service if the service is present\enabled
+                if (!RgFltFilter.TryAttach(tracer, enlistment.EnlistmentRoot, out errorMessage))
                 {
                     if (!this.ShowStatusWhileRunning(
-                        () => { return this.AttachGvFltThroughService(enlistment, out errorMessage); },
-                        "Attaching GvFlt to volume"))
+                        () => { return this.AttachRgFltThroughService(enlistment, out errorMessage); },
+                        "Attaching RgFlt to volume"))
                     {
                         this.ReportErrorAndExit(tracer, errorMessage);
                     }
@@ -226,11 +226,11 @@ namespace RGFS.CommandLine
             return true;
         }
 
-        private bool AttachGvFltThroughService(RGFSEnlistment enlistment, out string errorMessage)
+        private bool AttachRgFltThroughService(RGFSEnlistment enlistment, out string errorMessage)
         {
             errorMessage = string.Empty;
 
-            NamedPipeMessages.AttachGvFltRequest request = new NamedPipeMessages.AttachGvFltRequest();
+            NamedPipeMessages.AttachRgFltRequest request = new NamedPipeMessages.AttachRgFltRequest();
             request.EnlistmentRoot = enlistment.EnlistmentRoot;
 
             using (NamedPipeClient client = new NamedPipeClient(this.ServicePipeName))
@@ -245,9 +245,9 @@ namespace RGFS.CommandLine
                 {
                     client.SendRequest(request.ToMessage());
                     NamedPipeMessages.Message response = client.ReadResponse();
-                    if (response.Header == NamedPipeMessages.AttachGvFltRequest.Response.Header)
+                    if (response.Header == NamedPipeMessages.AttachRgFltRequest.Response.Header)
                     {
-                        NamedPipeMessages.AttachGvFltRequest.Response message = NamedPipeMessages.AttachGvFltRequest.Response.FromMessage(response);
+                        NamedPipeMessages.AttachRgFltRequest.Response message = NamedPipeMessages.AttachRgFltRequest.Response.FromMessage(response);
 
                         if (!string.IsNullOrEmpty(message.ErrorMessage))
                         {
@@ -257,7 +257,7 @@ namespace RGFS.CommandLine
 
                         if (message.State != NamedPipeMessages.CompletionState.Success)
                         {
-                            errorMessage = "Failed to attach GvFlt to volume.";
+                            errorMessage = "Failed to attach RgFlt to volume.";
                             return false;
                         }
                         else

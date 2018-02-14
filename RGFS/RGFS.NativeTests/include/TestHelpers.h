@@ -3,7 +3,7 @@
 #include "Should.h"
 #include "gvlib_internal.h"
 
-// Map GVFlt testing macros to RGFS testing macros
+// Map RGFlt testing macros to RGFS testing macros
 #define VERIFY_ARE_EQUAL SHOULD_EQUAL
 #define VERIFY_ARE_NOT_EQUAL SHOULD_NOT_EQUAL
 #define VERIFY_FAIL FAIL_TEST
@@ -456,9 +456,9 @@ inline NTSTATUS ReadEAInfo(const std::string& path, PFILE_FULL_EA_INFORMATION ea
 
     IO_STATUS_BLOCK IoStatusBlock;
     
-    // In the GVFlt tests, Index of 0 is used, however, per minkernel\fs\ntfs\ea.c
+    // In the RGFlt tests, Index of 0 is used, however, per minkernel\fs\ntfs\ea.c
     // "If the index value is zero, there are no Eas to return"  Confirmed index of 1
-    // properly reads EAs created using ea.exe test tool provided by GVFlt (\\craigba-dev\Bin\amd64\Ea.exe)
+    // properly reads EAs created using ea.exe test tool provided by RGFlt (\\craigba-dev\Bin\amd64\Ea.exe)
     ULONG Index = 1;
     FILE_EA_INFORMATION eaInfo = { 0 };
 

@@ -36,7 +36,7 @@
   <ImportGroup Label="Shared">
   </ImportGroup>
   <ImportGroup Label="PropertySheets">
-    <Import Project="..\RGFS.GvFltWrapper\GvFlt.props" />
+    <Import Project="..\RGFS.RgFltWrapper\RgFlt.props" />
   </ImportGroup>  
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -69,7 +69,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>gvlib.lib;fltlib.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10240.0\ucrt\x64;$(SolutionDir)\..\packages\$(GvFltPackage)\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10240.0\ucrt\x64;$(SolutionDir)\..\packages\$(RgFltPackage)\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -90,7 +90,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>gvlib.lib;fltlib.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10240.0\ucrt\x64;$(SolutionDir)\..\packages\$(GvFltPackage)\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10240.0\ucrt\x64;$(SolutionDir)\..\packages\$(RgFltPackage)\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -98,7 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileUtils.h" />
-    <ClInclude Include="include\gvflt.h" />
+    <ClInclude Include="include\rgflt.h" />
     <ClInclude Include="include\gvlib_internal.h" />
     <ClInclude Include="include\NtFunctions.h" />
     <ClInclude Include="include\TestHelpers.h" />
@@ -110,17 +110,17 @@
     <ClInclude Include="include\TestException.h" />
     <ClInclude Include="include\TestVerifiers.h" />
     <ClInclude Include="interface\TrailingSlashTests.h" />
-    <ClInclude Include="interface\GVFlt_BugRegressionTest.h" />
-    <ClInclude Include="interface\GVFlt_DeleteFileTest.h" />
-    <ClInclude Include="interface\GVFlt_DeleteFolderTest.h" />
-    <ClInclude Include="interface\GVFlt_DirEnumTest.h" />
-    <ClInclude Include="interface\GVFlt_FileAttributeTest.h" />
-    <ClInclude Include="interface\GVFlt_FileEATest.h" />
-    <ClInclude Include="interface\GVFlt_FileOperationTest.h" />
-    <ClInclude Include="interface\GVFlt_MoveFileTest.h" />
-    <ClInclude Include="interface\GVFlt_MoveFolderTest.h" />
-    <ClInclude Include="interface\GVFlt_MultiThreadsTest.h" />
-    <ClInclude Include="interface\GVFlt_SetLinkTest.h" />
+    <ClInclude Include="interface\RGFlt_BugRegressionTest.h" />
+    <ClInclude Include="interface\RGFlt_DeleteFileTest.h" />
+    <ClInclude Include="interface\RGFlt_DeleteFolderTest.h" />
+    <ClInclude Include="interface\RGFlt_DirEnumTest.h" />
+    <ClInclude Include="interface\RGFlt_FileAttributeTest.h" />
+    <ClInclude Include="interface\RGFlt_FileEATest.h" />
+    <ClInclude Include="interface\RGFlt_FileOperationTest.h" />
+    <ClInclude Include="interface\RGFlt_MoveFileTest.h" />
+    <ClInclude Include="interface\RGFlt_MoveFolderTest.h" />
+    <ClInclude Include="interface\RGFlt_MultiThreadsTest.h" />
+    <ClInclude Include="interface\RGFlt_SetLinkTest.h" />
     <ClInclude Include="interface\NtQueryDirectoryFileTests.h" />
     <ClInclude Include="interface\PlaceholderUtils.h" />
     <ClInclude Include="interface\ReadAndWriteTests.h" />
@@ -137,17 +137,17 @@
     </ClCompile>
     <ClCompile Include="source\NtFunctions.cpp" />
     <ClCompile Include="source\TrailingSlashTests.cpp" />
-    <ClCompile Include="source\GVFlt_BugRegressionTest.cpp" />
-    <ClCompile Include="source\GVFlt_DeleteFileTest.cpp" />
-    <ClCompile Include="source\GVFlt_DeleteFolderTest.cpp" />
-    <ClCompile Include="source\GVFlt_DirEnumTest.cpp" />
-    <ClCompile Include="source\GVFlt_FileAttributeTest.cpp" />
-    <ClCompile Include="source\GVFlt_FileEATest.cpp" />
-    <ClCompile Include="source\GVFlt_FileOperationTest.cpp" />
-    <ClCompile Include="source\GVFlt_MoveFileTest.cpp" />
-    <ClCompile Include="source\GVFlt_MoveFolderTest.cpp" />
-    <ClCompile Include="source\GVFlt_MultiThreadTest.cpp" />
-    <ClCompile Include="source\GVFlt_SetLinkTest.cpp" />
+    <ClCompile Include="source\RGFlt_BugRegressionTest.cpp" />
+    <ClCompile Include="source\RGFlt_DeleteFileTest.cpp" />
+    <ClCompile Include="source\RGFlt_DeleteFolderTest.cpp" />
+    <ClCompile Include="source\RGFlt_DirEnumTest.cpp" />
+    <ClCompile Include="source\RGFlt_FileAttributeTest.cpp" />
+    <ClCompile Include="source\RGFlt_FileEATest.cpp" />
+    <ClCompile Include="source\RGFlt_FileOperationTest.cpp" />
+    <ClCompile Include="source\RGFlt_MoveFileTest.cpp" />
+    <ClCompile Include="source\RGFlt_MoveFolderTest.cpp" />
+    <ClCompile Include="source\RGFlt_MultiThreadTest.cpp" />
+    <ClCompile Include="source\RGFlt_SetLinkTest.cpp" />
     <ClCompile Include="source\NtQueryDirectoryFileTests.cpp" />
     <ClCompile Include="source\PlaceholderUtils.cpp" />
     <ClCompile Include="source\ReadAndWriteTests.cpp" />

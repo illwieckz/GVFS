@@ -373,7 +373,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
         public void FilePlaceHolderHasVersionInfo()
         {
             string sha = "BB1C8B9ADA90D6B8F6C88F12C6DDB07C186155BD";
-            string virtualFilePath = this.Enlistment.GetVirtualPathTo("GVFlt_BugRegressionTest\\GVFlt_ModifyFileInScratchAndDir\\ModifyFileInScratchAndDir.txt");
+            string virtualFilePath = this.Enlistment.GetVirtualPathTo("RGFlt_BugRegressionTest\\RGFlt_ModifyFileInScratchAndDir\\ModifyFileInScratchAndDir.txt");
             virtualFilePath.ShouldBeAFile(this.fileSystem).WithContents();
 
             ProcessResult revParseHeadResult = GitProcess.InvokeProcess(this.Enlistment.RepoRoot, "rev-parse HEAD");
@@ -385,7 +385,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
         [TestCase, Order(12), Ignore("Results in an access violation in the functional test on the build server")]
         public void FolderPlaceHolderHasVersionInfo()
         {
-            string virtualFilePath = this.Enlistment.GetVirtualPathTo("GVFlt_BugRegressionTest\\GVFlt_ModifyFileInScratchAndDir");
+            string virtualFilePath = this.Enlistment.GetVirtualPathTo("RGFlt_BugRegressionTest\\RGFlt_ModifyFileInScratchAndDir");
 
             ProcessResult revParseHeadResult = GitProcess.InvokeProcess(this.Enlistment.RepoRoot, "rev-parse HEAD");
             string commitID = revParseHeadResult.Output.Trim();
@@ -397,12 +397,12 @@ BOOL APIENTRY DllMain( HMODULE hModule,
         [Category(CategoryConstants.GitCommands)]
         public void FolderContentsProjectedAfterFolderCreateAndCheckout()
         {
-            string folderName = "GVFlt_MultiThreadTest";
+            string folderName = "RGFlt_MultiThreadTest";
 
-            // 575d597cf09b2cd1c0ddb4db21ce96979010bbcb did not have the folder GVFlt_MultiThreadTest
+            // 575d597cf09b2cd1c0ddb4db21ce96979010bbcb did not have the folder RGFlt_MultiThreadTest
             GitProcess.InvokeProcess(this.Enlistment.RepoRoot, "checkout 575d597cf09b2cd1c0ddb4db21ce96979010bbcb");
 
-            // Confirm that no other test has created GVFlt_MultiThreadTest or put it in the sparse-checkout
+            // Confirm that no other test has created RGFlt_MultiThreadTest or put it in the sparse-checkout
             string sparseFile = this.Enlistment.GetVirtualPathTo(TestConstants.DotGit.Info.SparseCheckout);
             sparseFile.ShouldBeAFile(this.fileSystem).WithContents().ShouldNotContain(ignoreCase: true, unexpectedSubstrings: folderName);
 
@@ -410,8 +410,8 @@ BOOL APIENTRY DllMain( HMODULE hModule,
             virtualFolderPath.ShouldNotExistOnDisk(this.fileSystem);
             this.fileSystem.CreateDirectory(virtualFolderPath);
 
-            // b5fd7d23706a18cff3e2b8225588d479f7e51138 was the commit prior to deleting GVFLT_MultiThreadTest
-            // 692765: Note that test also validates case insensitivity as GVFlt_MultiThreadTest is named GVFLT_MultiThreadTest
+            // b5fd7d23706a18cff3e2b8225588d479f7e51138 was the commit prior to deleting RGFLT_MultiThreadTest
+            // 692765: Note that test also validates case insensitivity as RGFlt_MultiThreadTest is named RGFLT_MultiThreadTest
             //         in this commit
             GitProcess.InvokeProcess(this.Enlistment.RepoRoot, "checkout b5fd7d23706a18cff3e2b8225588d479f7e51138");
 

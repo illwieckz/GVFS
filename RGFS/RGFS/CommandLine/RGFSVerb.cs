@@ -190,10 +190,10 @@ namespace RGFS.CommandLine
             this.ReportErrorAndExit(tracer, ReturnCode.GenericError, error, args);
         }
 
-        protected void CheckGVFltHealthy()
+        protected void CheckRGFltHealthy()
         {
             string error;
-            if (!GvFltFilter.IsHealthy(out error, tracer: null))
+            if (!RgFltFilter.IsHealthy(out error, tracer: null))
             {
                 this.ReportErrorAndExit(tracer: null, error: error);
             }
