@@ -2,7 +2,7 @@
 
 #include "IVirtualizationInstance.h"
 
-namespace GvLib 
+namespace RgLib 
 {
     public ref class VirtualizationInstance : public IVirtualizationInstance
     {
@@ -306,7 +306,7 @@ namespace GvLib
         /// <exception cref="System::InvalidOperationException">
         /// Thrown if there is already another running VirtualizationInstance
         /// </exception>
-        /// <exception cref="GvLibException">
+        /// <exception cref="RgLibException">
         /// Thrown if there is a failure determining logicalBytesPerSector or writeBufferAlignment
         /// </exception> 
         virtual HResult StartVirtualizationInstance(

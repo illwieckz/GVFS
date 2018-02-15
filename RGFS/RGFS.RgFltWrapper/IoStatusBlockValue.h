@@ -1,6 +1,6 @@
 #pragma once
 
-namespace GvLib
+namespace RgLib
 {
     public enum class IoStatusBlockValue : unsigned int
     {

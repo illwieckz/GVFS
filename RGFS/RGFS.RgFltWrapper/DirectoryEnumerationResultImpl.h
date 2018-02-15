@@ -2,7 +2,7 @@
 
 #include "DirectoryEnumerationResult.h"
 
-namespace GvLib
+namespace RgLib
 {
     template<class NativeEnumerationDataStruct>
     private ref class DirectoryEnumerationResultImpl : public DirectoryEnumerationResult

@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Utils.h"
 
-using namespace GvLib;
+using namespace RgLib;
 
 NtStatus Utils::Win32ErrorToNtStatus(int win32Error)
 {

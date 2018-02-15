@@ -2,10 +2,10 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <Import Project="RGFS.RgFltWrapper\RgFlt.props" />
     <ItemGroup>
-        <None Condition="Exists('..\..\..\packages\$(RgFltPackage)\lib\x64\GvLib.dll')" Include="..\..\..\packages\$(RgFltPackage)\lib\x64\GvLib.dll">
+        <None Condition="Exists('..\..\..\packages\$(RgFltPackage)\lib\x64\RgLib.dll')" Include="..\..\..\packages\$(RgFltPackage)\lib\x64\RgLib.dll">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Condition="Exists('..\..\..\packages\$(RgFltPackage)\lib\x64\GvLib.pdb')" Include="..\..\..\packages\$(RgFltPackage)\lib\x64\GvLib.pdb">
+        <None Condition="Exists('..\..\..\packages\$(RgFltPackage)\lib\x64\RgLib.pdb')" Include="..\..\..\packages\$(RgFltPackage)\lib\x64\RgLib.pdb">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
     </ItemGroup>

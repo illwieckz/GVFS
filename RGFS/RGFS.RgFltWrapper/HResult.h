@@ -1,6 +1,6 @@
 #pragma once
 
-namespace GvLib
+namespace RgLib
 {
     ///<summary>Subset of HRESULT values</summary>
     public enum class HResult : long

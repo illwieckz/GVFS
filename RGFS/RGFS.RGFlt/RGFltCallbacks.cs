@@ -5,7 +5,7 @@ using RGFS.Common.NamedPipes;
 using RGFS.Common.NetworkStreams;
 using RGFS.Common.Tracing;
 using RGFS.RGFlt.DotGit;
-using GvLib;
+using RgLib;
 using Microsoft.Database.Isam.Config;
 using Microsoft.Diagnostics.Tracing;
 using Microsoft.Isam.Esent.Collections.Generic;

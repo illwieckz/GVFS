@@ -2,7 +2,7 @@
 using RGFS.Common.Git;
 using RGFS.Common.NamedPipes;
 using RGFS.Common.Tracing;
-using GvLib;
+using RgLib;
 using Microsoft.Diagnostics.Tracing;
 using Microsoft.Isam.Esent.Collections.Generic;
 using System;

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace GvLib
+namespace RgLib
 {
     /// <summary>
     /// Types of notifications that for which a provider can register

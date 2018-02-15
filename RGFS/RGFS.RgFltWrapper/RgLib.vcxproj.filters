@@ -68,7 +68,7 @@
     <ClInclude Include="IVirtualizationInstance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GvLibException.h">
+    <ClInclude Include="RgLibException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -88,7 +88,7 @@
     <ClCompile Include="Utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GvLibException.cpp">
+    <ClCompile Include="RgLibException.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

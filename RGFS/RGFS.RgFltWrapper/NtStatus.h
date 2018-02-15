@@ -1,6 +1,6 @@
 #pragma once
 
-namespace GvLib
+namespace RgLib
 {
     ///<summary>Subset of NTSTATUS values</summary>
     public enum class NtStatus : NTSTATUS

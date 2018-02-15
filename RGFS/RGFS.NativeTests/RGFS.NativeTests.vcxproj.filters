@@ -55,7 +55,7 @@
     <ClInclude Include="include\TestVerifiers.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="include\gvlib_internal.h">
+    <ClInclude Include="include\rglib_internal.h">
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\rgflt.h">

@@ -8,7 +8,7 @@ using RGFS.UnitTests.Mock.RgFlt;
 using RGFS.UnitTests.Mock.RGFS.RgFlt;
 using RGFS.UnitTests.Mock.RGFS.RgFlt.DotGit;
 using RGFS.UnitTests.Virtual;
-using GvLib;
+using RgLib;
 using NUnit.Framework;
 using System;
 using System.Threading.Tasks;

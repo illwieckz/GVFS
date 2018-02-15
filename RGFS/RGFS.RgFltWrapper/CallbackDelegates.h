@@ -4,7 +4,7 @@
 #include "NtStatus.h"
 #include "WriteBuffer.h"
 
-namespace GvLib
+namespace RgLib
 {
     /// <summary>Directory is about to be enumerated</summary>
     /// <param name="commandId">ID that uniquely identifies this command\request</param>

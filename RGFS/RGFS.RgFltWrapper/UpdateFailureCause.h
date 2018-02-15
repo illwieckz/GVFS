@@ -1,6 +1,6 @@
 #pragma once
 
-namespace GvLib
+namespace RgLib
 {
     /// <summary> 
     /// Enums that are populated in the OutParam FailureReason in APIs

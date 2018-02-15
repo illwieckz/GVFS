@@ -1,11 +1,11 @@
 #include "stdafx.h"
-#include "GvLibException.h"
+#include "RgLibException.h"
 #include "VirtualizationInstance.h"
 #include "DirectoryEnumerationResultImpl.h"
 #include "DirectoryEnumerationFileNamesResult.h"
 #include "Utils.h"
 
-using namespace GvLib;
+using namespace RgLib;
 using namespace System;
 using namespace System::Globalization;
 
@@ -22,7 +22,7 @@ namespace
         static VirtualizationInstance^ activeInstance = nullptr;
     };    
     
-    // GvLib callback functions that forward the request from GvLib to the active
+    // RgLib callback functions that forward the request from RgLib to the active
     // VirtualizationInstance (VirtualizationManager::activeInstance)
     NTSTATUS GvStartDirectoryEnumerationCB(
         _In_ PGV_CALLBACK_DATA                callbackData,
@@ -585,7 +585,7 @@ void VirtualizationInstance::FindBytesPerSectorAndAlignment()
     if (!ntdll)
     {
         DWORD lastError = GetLastError();
-        throw gcnew GvLibException(String::Format(CultureInfo::InvariantCulture, "Failed to load ntdll.dll, Error: {0}", lastError));
+        throw gcnew RgLibException(String::Format(CultureInfo::InvariantCulture, "Failed to load ntdll.dll, Error: {0}", lastError));
     }
 
     PQueryVolumeInformationFile ntQueryVolumeInformationFile = (PQueryVolumeInformationFile)GetProcAddress(ntdll, "NtQueryVolumeInformationFile");
@@ -593,7 +593,7 @@ void VirtualizationInstance::FindBytesPerSectorAndAlignment()
     {
         DWORD lastError = GetLastError();
         FreeLibrary(ntdll);
-        throw gcnew GvLibException(String::Format(CultureInfo::InvariantCulture, "Failed to get process address of NtQueryVolumeInformationFile, Error: {0}", lastError));
+        throw gcnew RgLibException(String::Format(CultureInfo::InvariantCulture, "Failed to get process address of NtQueryVolumeInformationFile, Error: {0}", lastError));
     }
 
     // TODO 640838: Support paths longer than MAX_PATH
@@ -607,7 +607,7 @@ void VirtualizationInstance::FindBytesPerSectorAndAlignment()
     {
         DWORD lastError = GetLastError();
         FreeLibrary(ntdll);
-        throw gcnew GvLibException(String::Format(CultureInfo::InvariantCulture, "Failed to get volume path name, Error: {0}", lastError));
+        throw gcnew RgLibException(String::Format(CultureInfo::InvariantCulture, "Failed to get volume path name, Error: {0}", lastError));
     }
 
     WCHAR volumeName[VOLUME_PATH_LENGTH + 1];
@@ -616,13 +616,13 @@ void VirtualizationInstance::FindBytesPerSectorAndAlignment()
     {
         DWORD lastError = GetLastError();
         FreeLibrary(ntdll);
-        throw gcnew GvLibException(String::Format(CultureInfo::InvariantCulture, "Failed to get volume name for volume mount point, Error: {0}", lastError));
+        throw gcnew RgLibException(String::Format(CultureInfo::InvariantCulture, "Failed to get volume name for volume mount point, Error: {0}", lastError));
     }
 
     if (wcslen(volumeName) != VOLUME_PATH_LENGTH || volumeName[VOLUME_PATH_LENGTH - 1] != L'\\')
     {
         FreeLibrary(ntdll);
-        throw gcnew GvLibException(String::Format(CultureInfo::InvariantCulture, "Volume name {0} is not in expected format", gcnew String(volumeName)));
+        throw gcnew RgLibException(String::Format(CultureInfo::InvariantCulture, "Volume name {0} is not in expected format", gcnew String(volumeName)));
     }
 
     HANDLE rootHandle = CreateFile(
@@ -638,7 +638,7 @@ void VirtualizationInstance::FindBytesPerSectorAndAlignment()
     {
         DWORD lastError = GetLastError();
         FreeLibrary(ntdll);
-        throw gcnew GvLibException(String::Format(CultureInfo::InvariantCulture, "Failed to get handle to {0}, Error: {1}", this->virtualRootPath, lastError));
+        throw gcnew RgLibException(String::Format(CultureInfo::InvariantCulture, "Failed to get handle to {0}, Error: {1}", this->virtualRootPath, lastError));
     }
 
     FILE_FS_SECTOR_SIZE_INFORMATION sectorInfo;
@@ -657,7 +657,7 @@ void VirtualizationInstance::FindBytesPerSectorAndAlignment()
     {
         CloseHandle(rootHandle);
         FreeLibrary(ntdll);
-        throw gcnew GvLibException(String::Format(CultureInfo::InvariantCulture, "Failed to query sector size of volume, Status: {0}", status));
+        throw gcnew RgLibException(String::Format(CultureInfo::InvariantCulture, "Failed to query sector size of volume, Status: {0}", status));
     }
 
     FILE_ALIGNMENT_INFO alignmentInfo;
@@ -669,7 +669,7 @@ void VirtualizationInstance::FindBytesPerSectorAndAlignment()
         DWORD lastError = GetLastError();
         CloseHandle(rootHandle);
         FreeLibrary(ntdll);
-        throw gcnew GvLibException(String::Format(CultureInfo::InvariantCulture, "Failed to query device alignment, Error: {0}", lastError));
+        throw gcnew RgLibException(String::Format(CultureInfo::InvariantCulture, "Failed to query device alignment, Error: {0}", lastError));
     }
 
     this->bytesPerSector = sectorInfo.LogicalBytesPerSector;
@@ -684,7 +684,7 @@ void VirtualizationInstance::FindBytesPerSectorAndAlignment()
 
     if (!IsPowerOf2(this->writeBufferAlignmentRequirement))
     {
-        throw gcnew GvLibException(String::Format(CultureInfo::InvariantCulture, "Failed to determine write buffer alignment requirement: {0} is not a power of 2", this->writeBufferAlignmentRequirement));
+        throw gcnew RgLibException(String::Format(CultureInfo::InvariantCulture, "Failed to determine write buffer alignment requirement: {0} is not a power of 2", this->writeBufferAlignmentRequirement));
     }
 }
 
@@ -1083,7 +1083,7 @@ namespace
             fileInfoSize = FIELD_OFFSET(FILE_ID_EXTD_BOTH_DIR_INFORMATION, FileName);
             return gcnew DirectoryEnumerationResultImpl<FILE_ID_EXTD_BOTH_DIR_INFORMATION >(static_cast<FILE_ID_EXTD_BOTH_DIR_INFORMATION *>(buffer), bufferLength);
         default:
-            throw gcnew GvLibException(
+            throw gcnew RgLibException(
                 String::Format("CreateEnumerationResult: Invalid fileInformationClass: {0}", static_cast<int>(fileInformationClass)), 
                 NtStatus::InvalidDeviceRequest);
         }
@@ -1106,7 +1106,7 @@ namespace
             static_cast<FILE_ID_EXTD_BOTH_DIR_INFORMATION*>(buffer)->NextEntryOffset = offset;
             break;
         default:
-            throw gcnew GvLibException(
+            throw gcnew RgLibException(
                 String::Format("SetNextEntryOffset: Invalid fileInformationClass: {0}", static_cast<int>(fileInformationClass)),
                 NtStatus::InvalidDeviceRequest);
         }
@@ -1123,7 +1123,7 @@ namespace
             return 4;
             break;
         default:
-            throw gcnew GvLibException(
+            throw gcnew RgLibException(
                 String::Format("GetRequiredAlignment: Invalid fileInformationClass: {0}", static_cast<int>(fileInformationClass)),
                 NtStatus::InvalidDeviceRequest);
         }

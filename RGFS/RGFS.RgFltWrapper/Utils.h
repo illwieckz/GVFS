@@ -2,7 +2,7 @@
 
 #include "NtStatus.h"
 
-namespace GvLib
+namespace RgLib
 {
     public ref class Utils abstract sealed
     {

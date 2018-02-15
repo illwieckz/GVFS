@@ -1,6 +1,6 @@
 #pragma once
 
-namespace GvLib
+namespace RgLib
 {
     /// <summary>Enums to support update/delete operations on on-disk files in various states</summary>
     [System::FlagsAttribute]

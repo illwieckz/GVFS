@@ -3,7 +3,7 @@
 #include "DirectoryEnumerationResult.h"
 #include "NativeEnumerationResultUtils.h"
 
-namespace GvLib
+namespace RgLib
 {
     private ref class DirectoryEnumerationFileNamesResult : public DirectoryEnumerationResult
     {

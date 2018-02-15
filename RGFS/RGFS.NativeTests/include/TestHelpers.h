@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Should.h"
-#include "gvlib_internal.h"
+#include "rglib_internal.h"
 
 // Map RGFlt testing macros to RGFS testing macros
 #define VERIFY_ARE_EQUAL SHOULD_EQUAL

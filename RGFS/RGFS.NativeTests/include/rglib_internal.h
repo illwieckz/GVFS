@@ -1,9 +1,9 @@
-// gvlib_internal.h
+// rglib_internal.h
 //
-// Function declarations for internal functions in gvlib (used in the RGFlt tests)
+// Function declarations for internal functions in rglib (used in the RGFlt tests)
 // that are not intended to be used by user applications (e.g. RGFS) built on RGFlt
 //
-// Subset of the contents of: sdktools\CoreBuild\RgFlt\lib\gvlib_internal.h
+// Subset of the contents of: sdktools\CoreBuild\RgFlt\lib\rglib_internal.h
 
 #pragma once
 

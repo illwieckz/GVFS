@@ -2,15 +2,15 @@
 
 #include "NtStatus.h"
 
-namespace GvLib
+namespace RgLib
 {
     [System::Serializable]
-    public ref class GvLibException : System::Exception
+    public ref class RgLibException : System::Exception
     {
     public:
-        GvLibException(System::String^ errorMessage);
-        GvLibException(NtStatus errorCode);
-        GvLibException(System::String^ errorMessage, NtStatus errorCode);
+        RgLibException(System::String^ errorMessage);
+        RgLibException(NtStatus errorCode);
+        RgLibException(System::String^ errorMessage, NtStatus errorCode);
 
         virtual System::String^ ToString() override;
 
@@ -27,7 +27,7 @@ namespace GvLib
         };
 
     protected:
-        GvLibException(
+        RgLibException(
             System::Runtime::Serialization::SerializationInfo^ info, 
             System::Runtime::Serialization::StreamingContext context);
 

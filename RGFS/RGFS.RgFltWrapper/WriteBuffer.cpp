@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "WriteBuffer.h"
 
-using namespace GvLib;
+using namespace RgLib;
 using namespace System;
 using namespace System::IO;
 

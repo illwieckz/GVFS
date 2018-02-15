@@ -6,7 +6,7 @@
 #include "NtStatus.h"
 #include "WriteBuffer.h"
 
-namespace GvLib
+namespace RgLib
 {
     /// <summary>Interface to allow for easier unit testing </summary>
     public interface class IVirtualizationInstance
@@ -307,7 +307,7 @@ namespace GvLib
         /// <exception cref="System::InvalidOperationException">
         /// Thrown if there is already another running VirtualizationInstance
         /// </exception>
-        /// <exception cref="GvLibException">
+        /// <exception cref="RgLibException">
         /// Thrown if there is a failure determining logicalBytesPerSector or writeBufferAlignment
         /// </exception> 
         HResult StartVirtualizationInstance(
